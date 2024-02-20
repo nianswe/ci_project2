@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* Function GetImages, Get 18 random images of 30 from array 'images' pushed to array 'pickedImgs' */
 function getImages() {
-  let images = ["img1", "img2", "img3", "img4", "img5", "img6", "img7", "img8", "img9", "img10", "img11", "img12", "img13", "img14", "img15", "img16", "img17", "img18", "img19", "img20", "img21", "img22", "img23", "img24", "img25", "img26", "img27", "img28", "img29", "img30"]
-  var pickedImgs = [];    
+ /*  let images = ["img1", "img2", "img3", "img4", "img5", "img6", "img7", "img8", "img9", "img10", "img11", "img12", "img13", "img14", "img15", "img16", "img17", "img18", "img19", "img20", "img21", "img22", "img23", "img24", "img25", "img26", "img27", "img28", "img29", "img30"] */
+let images = ['<i id= "1" class = "fa-solid fa-music"></i>', '<i id= "2" class = "fa-solid fa-star"></i>', '<i id= "3" class = "fa-solid fa-heart"></i>', '<i id= "4" class = "fa-regular fa-face-smile"></i>', '<i id= "5" class = "fa-regular fa-bell"></i>', '<i id= "6" class = "fa-solid fa-bolt"></i>', '<i id= "7" class = "fa-solid fa-car"></i>', '<i id= "8" class = "fa-solid fa-umbrella"></i>', '<i id= "9" class = "fa-solid fa-headphones"></i>', '<i id= "10" class = "fa-solid fa-plane"></i>', '<i id= "11" class = "fa-solid fa-key"></i>', '<i id= "12" class = "fa-solid fa-bicycle"></i>', '<i id= "13" class = "fa-solid fa-sun"></i>', '<i id= "14" class = "fa-solid fa-car-side"></i>', '<i id= "15" class = "fa-solid fa-robot"></i>', '<i id= "16" class = "fa-solid fa-trophy"></i>', '<i id= "17" class = "fa-solid fa-circle-check"></i>', '<i id= "18" class = "fa-solid fa-glasses"></i>', '<i id= "19" class = "fa-solid fa-yin-yang"></i>', '<i id= "20" class = "fa-solid fa-suitcase"></i>', '<i id= "21" class = "fa-solid fa-skull"></i>', '<i id= "22" class = "fa-solid fa-sailboat"></i>', '<i id= "23" class = "fa-solid fa-rainbow"></i>', '<i id= "24" class = "fa-solid fa-radiation"></i>', '<i id= "25" class = "fa-solid fa-pizza-slice"></i>', '<i id= "26" class = "fa-solid fa-peace"></i>', '<i id= "27" class = "fa-solid fa-hourglass-half"></i>', '<i id= "28" class = "fa-solid fa-guitar"></i>', '<i id= "29" class = "fa-solid fa-fish-fins"></i>', '<i id= "30" class = "fa-solid fa-clover"></i>'];
+	var pickedImgs = [];    
   for (let i = 0; i < 18; i++) {
     let random = Math.floor(Math.random() * images.length);
     	pickedImgs.push(images[random]);
@@ -48,7 +49,7 @@ function getDouble() {
 };
 
 function getPosition() {
-	var position = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+	var position = ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7", "pos8", "pos9", "pos10", "pos11", "pos12", "pos13", "pos14", "pos15", "pos16", "pos17", "pos18"];
 		let currentIndex = position.length,  randomIndex;
 	
 		// While there remain elements to shuffle.
@@ -66,47 +67,22 @@ function getPosition() {
 		return position;
 	}
 	
+function addImgToCard() {
+
+let addPosition = getPosition();
+let addDouble = getDouble();
+let addImg = getImages();
+  
+	for(let i = 0; i < addPosition.length; i++){
+		let pos =  addPosition[0]; 
 	
+		document.getElementById("pos").innerHTML = addImg[0];
+		addImg.splice(0);
+		addPosition.splice(0);
+		console.log(pos);
+		console.log(addImg);
 
-
-
-
-
-
-
-
-
-
-/**
- * Variables with all 
- */
-let img1 = '<i id= "1" class = "fa-solid fa-music"></i>' 
-let img2 = '<i id= "2" class = "fa-solid fa-star"></i>' 
-let img3 = '<i id= "3" class = "fa-solid fa-heart"></i>' 
-let img4 = '<i id= "4" class = "fa-regular fa-face-smile"></i>' 
-let img5 = '<i id= "5" class = "fa-regular fa-bell"></i>' 
-let img6 = '<i id= "6" class = "fa-solid fa-bolt"></i>' 
-let img7 = '<i id= "7" class = "fa-solid fa-car"></i>' 
-let img8 = '<i id= "8" class = "fa-solid fa-umbrella"></i>' 
-let img9 = '<i id= "9" class = "fa-solid fa-headphones"></i>' 
-let img10 = '<i id= "10" class = "fa-solid fa-plane"></i>' 
-let img11 = '<i id= "11" class = "fa-solid fa-key"></i>' 
-let img12 = '<i id= "12" class = "fa-solid fa-bicycle"></i>' 
-let img13 = '<i id= "13" class = "fa-solid fa-sun"></i>' 
-let img14 = '<i id= "14" class = "fa-solid fa-car-side"></i>' 
-let img15 = '<i id= "15" class = "fa-solid fa-robot"></i>' 
-let img16 = '<i id= "16" class = "fa-solid fa-trophy"></i>' 
-let img17 = '<i id= "17" class = "fa-solid fa-circle-check"></i>' 
-let img18 = '<i id= "18" class = "fa-solid fa-glasses"></i>' 
-let img19 = '<i id= "19" class = "fa-solid fa-yin-yang"></i>' 
-let img20 = '<i id= "20" class = "fa-solid fa-suitcase"></i>' 
-let img21 = '<i id= "21" class = "fa-solid fa-skull"></i>' 
-let img22 = '<i id= "22" class = "fa-solid fa-sailboat"></i>' 
-let img23 = '<i id= "23" class = "fa-solid fa-rainbow"></i>' 
-let img24 = '<i id= "24" class = "fa-solid fa-radiation"></i>' 
-let img25 = '<i id= "25" class = "fa-solid fa-pizza-slice"></i>' 
-let img26 = '<i id= "26" class = "fa-solid fa-peace"></i>' 
-let img27 = '<i id= "27" class = "fa-solid fa-hourglass-half"></i>' 
-let img28 = '<i id= "28" class = "fa-solid fa-guitar"></i>' 
-let img29 = '<i id= "29" class = "fa-solid fa-fish-fins"></i>' 
-let img30 = '<i id= "30" class = "fa-solid fa-clover"></i>' 
+		return pos;
+		return addImg;
+	}
+}
