@@ -53,7 +53,20 @@
 }
 
 .card {
-	
+	width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 500px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: space-between;
+    display: flex;	
+}
+
+.card > * {
+    width:calc(100% / 3);
+    padding:3rem 1rem;    
 }
 
 #card1 {
@@ -65,11 +78,14 @@
 }
 
 .row {
-	
+    display: table-row;
+    max-width: 65%;
 }
 
 .cell {
-	
+    display: table-cell;
+    height: 33%;
+    font-size: 240%;
 }
 
 .score-board {
