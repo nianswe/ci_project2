@@ -6,17 +6,19 @@ document.addEventListener("DOMContentLoaded", function() {
     
     for (let button of buttons) {
         button.addEventListener("click", function() {
-            /*if (this.getAttribute("data-type") === "startbutton") {
+            if (this.getAttribute("data-type") === "startbutton") {
             getImages();
-            } */
+            } 
             if (this.getAttribute("data-type") === "getDouble") {
             getDouble();
             } else if (this.getAttribute("data-type") === "getPosition") {
-							getPosition();
-						}
-
-        });
-    }
+			getPosition();
+			} else if (this.getAttribute("data-type") === "addImgToCard") {
+			addImgToCard();
+			}	
+		
+		});
+	};
 });
 
 /* Function GetImages, Get 18 random images of 30 from array 'images' pushed to array 'pickedImgs' */
@@ -29,7 +31,7 @@ let images = ['<i id= "1" class = "fa-solid fa-music"></i>', '<i id= "2" class =
     	pickedImgs.push(images[random]);
       images.splice(random, 1);
     }
-    /* console.log(pickedImgs); */      
+    console.log(pickedImgs);      
    return pickedImgs;      
 };
 
@@ -67,22 +69,55 @@ function getPosition() {
 		return position;
 	}
 	
+	
+/* Function addImgToCard  */
 function addImgToCard() {
+	
+	var newIElement = document.getElementById("pos1");
+	let html = newIElement.innerHTML;
+   		console.log(html);  // Whatever HTML was already in the element
+   
+  		 // SET the innerHTML (this replaces it)
+   		newIElement.innerHTML = getImages()[0];
 
-let addPosition = getPosition();
-let addDouble = getDouble();
-let addImg = getImages();
-  
+
+
+	/* var addPosition = getPosition();
+   	var newIElement = document.getElementById(addPosition);
+
+	for(let i = 0; i < addPosition.length; i++) {
+		
+   		// GET the innerHTML:
+   		let html = newIElement.innerHTML;
+   		console.log(html);  // Whatever HTML was already in the element
+   
+  		 // SET the innerHTML (this replaces it)
+   		myElement.innerHTML = getImages();
+
+		addPosition.splice(1);
+	} */
+};
+
+
+
+/* 	function addImgToCard() {
+	
+	let addPosition = getPosition();
+	let addDouble = getDouble();
+	let addImg = getImages();
+
+	console.log(addPosition);
+	console.log(addDouble);
+	console.log(addImg);
+
+ 
 	for(let i = 0; i < addPosition.length; i++){
 		let pos =  addPosition[0]; 
 	
 		document.getElementById("pos").innerHTML = addImg[0];
 		addImg.splice(0);
 		addPosition.splice(0);
-		console.log(pos);
+		console.log(addPosition);
 		console.log(addImg);
-
-		return pos;
-		return addImg;
-	}
-}
+	}	
+} */
