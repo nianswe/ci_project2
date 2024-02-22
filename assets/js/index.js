@@ -60,16 +60,18 @@ function shufOrgPositions() {
 	return orgPosition;
 }
 
+// Function double to get double image position.
 let firstCardPos = ["pos1", "pos3", "pos5", "pos7", "pos9", "pos11", "pos13", "pos15", "pos17"];
-function double() {
- 
-  	let doublePod = firstCardPos[(Math.floor(Math.random() * firstCardPos.length))];
-
-	  console.log(doublePod);
-	
-    
-	
-
+let secondCardPos = ["pos2", "pos4", "pos6", "pos8", "pos10", "pos12", "pos14", "pos16", "pos18"];
+function doublePos1() {
+	var doublePos1 = firstCardPos[(Math.floor(Math.random() * firstCardPos.length))];
+	 console.log(doublePos1);
+	 return doublePos1
+}
+function doublePos2() {
+	var doublePos2 = secondCardPos[(Math.floor(Math.random() * secondCardPos.length))];
+	 console.log(doublePos2);
+	 return doublePos2
 }
 
 function getPosition() { 
@@ -95,6 +97,9 @@ function getPosition() {
 	var pickedPos16 = [];
 	var pickedPos17 = [];
 	var pickedPos18 = [];
+
+	var doublePosition1 = doublePos1();
+	var doublePosition2 = doublePos2(); 
 
 	var pickedImg1 = [];
 	var pickedImg2 = [];
@@ -150,7 +155,8 @@ function getPosition() {
 	pickedImg15 = images[14]; 
 	pickedImg16 = images[15]; 
 	pickedImg17 = images[16]; 
-	pickedImg18 = images[17]; 
+	pickedImg18 = images[17];
+	doubleImage = images[18];  
 		
 	console.log("pickedPos1", pickedPos1);
 	console.log("pickedPos2", pickedPos2);
@@ -170,6 +176,8 @@ function getPosition() {
 	console.log("pickedPos16", pickedPos16);
 	console.log("pickedPos17", pickedPos17);
 	console.log("pickedPos18", pickedPos18);
+	console.log("doubleImage ", doubleImage);
+	
 
 	console.log("pickedImg1", pickedImg1);
 	console.log("pickedImg2", pickedImg2);
@@ -208,4 +216,11 @@ function getPosition() {
 		document.getElementById(pickedPos16).innerHTML = pickedImg16;
 		document.getElementById(pickedPos17).innerHTML = pickedImg17;
 		document.getElementById(pickedPos18).innerHTML = pickedImg18;
+		document.getElementById(doublePosition1).innerHTML = doubleImage;
+		document.getElementById(doublePosition2).innerHTML = doubleImage;
+	console.log("doublePosition1",doublePosition1);
+	console.log("doublePosition2",doublePosition2);
+	console.log("doubleImage",doubleImage);
+
+
 }
