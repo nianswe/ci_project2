@@ -84,30 +84,39 @@
     text-align: center;
     
 }
-
+ 
 #card1 {
 					 
 }
 
-.cell {
-    display: table-cell;
-    
-}
 
 .cell i {
 	font-size: 300%;
     
+    border: 2px dotted #000000;
+    border-radius: 25%;
+    
 }
  
+.cella i:hover {
+    background-color: whitesmoke;
+  }
+
+.cellb i:hover {
+    background-color:lightgray;
+    ;
+}
+
 .row {
     display: table-row;
 }
 
 .cell {
-    /* border: 2px dotted #000000; */
+    border: 2px dotted #000000;
     height: 50px;
     width: 50px;
     display: table-cell;
+    
     
     
  }
@@ -126,7 +135,10 @@
 @media screen and (min-width: 375px) {
     .cell i {
         font-size: 400%;
-        
+        padding-top: 15%;
+        padding-bottom: 15%;
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }
 
@@ -155,3 +167,12 @@
         grid-template-columns: 1fr 1fr 1fr;
         max-width: 1200px;
     } 
+
+    .cell i {
+        font-size: 400%;
+        padding-top: 25%;
+        padding-bottom: 25%;
+        padding-left: 10%;
+        padding-right: 10%;
+
+}

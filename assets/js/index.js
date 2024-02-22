@@ -6,13 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
     
     for (let button of buttons) {
         button.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === "getPosition") {
-			getPosition();
-            } else if (this.getAttribute("data-type") === "shufAllImages") {
-			shufAllImages();
-			} else if (this.getAttribute("data-type") === "double") {
-			double();
-			}
+            if (this.getAttribute("data-type") === "runGame") {
+			runGame();
+            
+			// } else if (this.getAttribute("data-type") === "shufAllImages") {
+			// shufAllImages();
+			// } else if (this.getAttribute("data-type") === "double") {
+			// double();
+		}
 			
 		});
 	};
@@ -74,7 +75,7 @@ function doublePos2() {
 	 return doublePos2
 }
 
-function getPosition() { 
+function runGame() { 
 	let images = shufAllImages();
 		
 	let position = shufOrgPositions();
