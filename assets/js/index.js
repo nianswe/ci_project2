@@ -223,5 +223,27 @@ function runGame() {
 	console.log("doublePosition2",doublePosition2);
 	console.log("doubleImage",doubleImage);
 
+	onClickImg();
+}
+
+function onClickImg() {
+	picsClick = document.getElementsByTagName("i");
+		for( var x=0; x < picsClick.length; x++ ) {
+		picsClick[x].onclick = function(){
+			alert('Correct:'+doubleImage);
+ 			let correct = doubleImage;
+			console.log('Correct:',doubleImage);
+
+ 			};
+		}
+}
+
+function checkCorrectInage() {
+
+	
+	let doubleImg =  document.getElementsById("i")
 
 }
+	
+	
+	

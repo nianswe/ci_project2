@@ -93,8 +93,8 @@
 .cell i {
 	font-size: 300%;
     
-    border: 2px dotted #000000;
-    border-radius: 25%;
+    /*  border: 2px dotted #000000; */
+    border-radius: 30%;
     
 }
  
@@ -112,7 +112,7 @@
 }
 
 .cell {
-    border: 2px dotted #000000;
+    /* border: 2px dotted #000000; */
     height: 50px;
     width: 50px;
     display: table-cell;
