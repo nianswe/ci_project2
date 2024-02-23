@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	};
 });
 
+// Correct chosen div/cell card1
+var correct1; 
+// Value of child of correct chosen div/cell card1
+var correctImg1;
+
 
 
 function shufAllImages() {
@@ -224,10 +229,10 @@ function runGame() {
 	console.log("doublePosition2",doublePosition2);
 	console.log("doubleImage",doubleImage);
 	
-	var correct1 = document.getElementById(doublePosition1);
-	var correctImg1 = correct1.children[0];
+	correct1 = document.getElementById(doublePosition1);
+	correctImg1 = correct1.children[0];
 	onClickImg(correctImg1.id);
-	console.log('correctImgId',correctImg1.id);
+	// console.log('correctImgId',correctImg1.id);
 	
 		
 	onClickImg();
@@ -237,14 +242,24 @@ function onClickImg(a) {
 	picsClick = document.getElementsByTagName("i");
 		for( var x=0; x < picsClick.length; x++ ) {
 		picsClick[x].onclick = function(){
-			alert("You picked the,"+this.id+", Correct image is the "+doubleImage);
+			// alert("You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 			// let correct = (doubleImage);
 			// let choice = ("Choice:,"+this.id+""+this.innerHTML);
 			let choice = (""+this.id+"");
 			// console.log('Correct:',correct);
-			console.log('choice',choice);
-			// console.log('correctImg1',correctImg1.id);
-			//console.log(correct1);
+			console.log('choice', choice);
+			// console.log('correct1', correct1);
+			console.log('correctImg1', correctImg1.id);
+			
+			let pickedCorrectAnnswer 
+			if (choice === correctImg1.id) {
+				alert("CORRECT ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
+				console.log('CORRECT ANSWER!');
+			} else {
+				alert("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
+				console.log('WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id');
+			}
+			
 					 
 
 		}
