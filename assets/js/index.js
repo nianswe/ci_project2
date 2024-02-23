@@ -309,8 +309,8 @@ function start10SecTimer() {
   		if(timeleft <= 0){
     		clearInterval(downloadTimer);
 			timeisUpInfo()
-			document.querySelector('#time');
 			document.getElementById("seconds").innerHTML = "Finished";
+			return;
   		} else {
     		document.getElementById("seconds").innerHTML = timeleft +"";
   		}
