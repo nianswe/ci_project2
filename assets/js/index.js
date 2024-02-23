@@ -84,7 +84,7 @@ function doublePos2() {
 function runGame() { 
 	hideFinalScoreInfo();
 	hidetimeisUpInfo();
-	start10SecTimer();
+	// start10SecTimer();
 	let images = shufAllImages();
 	let position = shufOrgPositions();
 	var pickedPos1 = [];
@@ -240,7 +240,7 @@ function runGame() {
 }
 
 function onClickImg(a) {
-	start10SecTimer();
+	// start10SecTimer();
 	picsClick = document.getElementsByTagName("i");
 		for( var x=0; x < picsClick.length; x++ ) {
 		picsClick[x].onclick = function(){
