@@ -49,7 +49,7 @@ function shufAllImages() {
 
 function shufOrgPositions() {
 	let orgPosition = ["pos1", "pos2", "pos3", "pos4", "pos5", "pos6", "pos7", "pos8", "pos9", "pos10", "pos11", "pos12", "pos13", "pos14", "pos15", "pos16", "pos17", "pos18"];
-	let firstCardPos = ["pos1", "pos3", "pos5", "pos7", "pos9", "pos11", "pos13", "pos15", "pos17"];
+	// let firstCardPos = ["pos1", "pos3", "pos5", "pos7", "pos9", "pos11", "pos13", "pos15", "pos17"];
 	let currentIndex = orgPosition.length,  randomIndex;
   
 	// While there remain elements to shuffle.
@@ -255,6 +255,8 @@ function onClickImg(a) {
 			if (choice === correctImg1.id) {
 				alert("CORRECT ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				console.log('CORRECT ANSWER!');
+				incrementScore()
+				runGame();
 			} else {
 				alert("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				console.log('WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id');
@@ -268,3 +270,12 @@ function onClickImg(a) {
 	
 }
 
+function incrementScore() {
+
+    let currentScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++currentScore;
+	document.getElementById("finalScore").innerText = currentScore;
+
+}
+
+ 

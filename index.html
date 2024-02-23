@@ -51,7 +51,7 @@
 			</div>
 			
 			<!-- Info box -->
-			<div id="info-box">
+			<div class="info-box">
 				
 				<button data-type="runGame" class="runGame">Run Game!</button>
 				<!-- <button data-type="shufAllImages" class="shufAllImages">shufAllImages</button> -->
@@ -59,11 +59,20 @@
 				<!-- <button data-type="addImgToCard" class="addImgToCard">Add Img To Card</button> -->
 
 				<!-- Score Board-->
-				<div class ="score-board"></div> 
+				<div class ="score-board">
+					<p class="scores">SCORE:<br><span id="score">0</span></p>
+        		</div> 
 				<!-- Time count down -->
-				<div class ="count-down"></div>
+				<div class ="count-down">
+					<p class="timer">TIMER:<br>0:<span id="seconds">10</span></p>
+				</div>
 		 	</div>		
 			
+			<div class ="finalScoreInfo">
+				<p class="finalInfo">GAME OVER<br>YOU SCORED: <span id="finalScore"></span></p>
+				<button data-type="runGame" class="runGameF">RUN A NEW GAME!</button>
+			</div>
+
 			<!-- Game section 2 -->		
 			<div class="game-plan2">
 				
