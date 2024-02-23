@@ -82,10 +82,11 @@ function doublePos2() {
 }
 
 function runGame() { 
+	hideFinalScoreInfo();
+	hidetimeisUpInfo();
+	start10SecTimer();
 	let images = shufAllImages();
-		
 	let position = shufOrgPositions();
-		
 	var pickedPos1 = [];
 	var pickedPos2 = [];
 	var pickedPos3 = [];
@@ -255,19 +256,18 @@ function onClickImg(a) {
 			if (choice === correctImg1.id) {
 				alert("CORRECT ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				console.log('CORRECT ANSWER!');
-				incrementScore()
+				incrementScore();
 				runGame();
 			} else {
 				alert("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				console.log('WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id');
+				showFinalScoreInfo();
+				document.getElementById("score").innerText = "0";
+								
 			}
-			
-					 
-
-		}
 		
+		}
 	}
-	
 }
 
 function incrementScore() {
@@ -278,4 +278,58 @@ function incrementScore() {
 
 }
 
- 
+function showFinalScoreInfo() {
+	
+	document.getElementById("finalScoreInfo").style.display = "block";
+}
+
+function hideFinalScoreInfo() {
+	
+	document.getElementById("finalScoreInfo").style.display = "none";
+}
+
+
+
+function timeisUpInfo() {
+	
+	document.getElementById("timeisUpInfo").style.display = "block";
+	return start10SecTimer; 
+	return countdownTimer;
+}
+
+function hidetimeisUpInfo() {
+	
+	document.getElementById("timeisUpInfo").style.display = "none";
+};
+
+var timer;
+function countdownTimer(duration, display) {
+    timer = duration, seconds;
+    setInterval(function () {
+        seconds = parseInt(timer % 60, 10);
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = seconds;
+		
+        if (--timer <= 0) {
+			self.stop();
+			timer = duration;
+		}
+	 	  
+    }, 1000);
+	
+};
+
+function start10SecTimer() {
+    var tenSeconds = 10,
+        display = document.querySelector('#seconds');
+		countdownTimer(tenSeconds, display);
+		
+};
+
+function stopTimer() {
+    clearInterval(timer);
+	
+	
+	
+};

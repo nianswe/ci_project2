@@ -21,13 +21,30 @@
 	<!-- Background div -->
 	<div class="background">
 		
+		<!-- Final Score Info window -->
+		<div id="finalScoreInfo">
+			<p id="finalInfo"><b>GAME OVER</b><br><br>YOU SCORED:<br><br><span id="finalScore">0</span><br><br>POINTS<br><br><b>GOOD JOB!</b></p>
+			<br>
+			<button data-type="runGame" id="runGameF">RUN A NEW GAME!</button>
+			
+		</div>
+
+		<!-- Time is up Info window -->
+		<div id="timeisUpInfo">
+			<p id="timeInfo"><b>YOUR TIME IS UP</b><br><br>YOU SCORED:<br><br><span id="finalScore">0</span><br><br>POINTS<br><br><b>Do you want to play againt with 10 seconds or increase he timer to 20 seconds?</b></p>
+			<br>
+			<button data-type="increase" id="increase10">INCREASE TO 20 SEC</button>
+			<button data-type="runGame" id="runGameF">RUN A NEW GAME!</button>
+			
+		</div>
+
 		<!-- Game area -->	
 		<div class ="game-area">
+						
 			<!-- Game section 1 -->		
 			<div class="game-plan1">
-				
+				<div class="card" id="card2">
 				<!-- Play card upper card 1 with table, 3 x 3 -->			
-				<div class="card" id="card1">
 					<div class="row">
                         <div id = "pos1" class = "cell1 cella cell"><i id = "star" class = "fa-solid fa-star"></i></div>
                         <div id = "pos3" class = "cell3 cella cell"><i id = "star" class = "fa-solid fa-star"></i></div>
@@ -46,9 +63,10 @@
                         <div id = "pos13" class = "cell13 cella cell"><i id = "star" class = "fa-solid fa-star"></i></div>
                         <div id = "pos15" class = "cell15 cella cell"><i id = "star" class = "fa-solid fa-star"></i></div>
                         <div id = "pos17" class = "cell17 cella cell"><i id = "star" class = "fa-solid fa-star"></i></div>
-                    </div>
-				</div>	
-			</div>
+                	</div>
+				</div>
+			</div>	
+			
 			
 			<!-- Info box -->
 			<div class="info-box">
@@ -66,12 +84,9 @@
 				<div class ="count-down">
 					<p class="timer">TIMER:<br>0:<span id="seconds">10</span></p>
 				</div>
-		 	</div>		
+		 	</div>
 			
-			<div class ="finalScoreInfo">
-				<p class="finalInfo">GAME OVER<br>YOU SCORED: <span id="finalScore"></span></p>
-				<button data-type="runGame" class="runGameF">RUN A NEW GAME!</button>
-			</div>
+			
 
 			<!-- Game section 2 -->		
 			<div class="game-plan2">

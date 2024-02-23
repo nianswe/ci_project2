@@ -50,7 +50,7 @@
     display:flex;
     justify-content: space-evenly;
     width: 100vw;
-    height:40px;
+    height:auto;
     background-color: white;
 
 }
@@ -61,19 +61,27 @@
     border-radius: 10% 10%;
     padding: 5px;
     
+    font-weight: bold;
+    font-size: 110%;
+    
 
 }
 
-.finalScoreInfo {
-    width: 100vw;
-    height:40%;
-    margin-top: 30%;
-    background-color: rgb(37, 164, 173);
+#finalScoreInfo,
+#timeisUpInfo {
+    display:none;
+    position: fixed;
+    width: 90vw;
+    height:auto;
+    border-radius: 20px;
+    margin-top: 20%;
+    background-color: rgba(37, 164, 173, 0.80);
     text-align: center;
 
 }
 
-.finalScoreInfo p  {
+#finalScoreInfo p,
+#timeisUpInfo p  {
     padding-top: 10%;
     text-align: center;
     color: whitesmoke;
@@ -81,12 +89,20 @@
 
 }
 
-.finalScoreInfo button {
-    font-size: medium;
+#finalScoreInfo span {
+    font-size:xxx-large;
+}
+
+#finalScoreInfo button
+#timeisUpInfo button { 
+    font-size: x-large;
     font-style: bold;
-    padding: 5px;
+    width: 60vw;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
-    border-radius: 25% 25%;
+    border-radius: 20px;
 }
 
 .score-board {
@@ -222,5 +238,5 @@
         padding-bottom: 25%;
         padding-left: 10%;
         padding-right: 10%;
-
+    }
 }
