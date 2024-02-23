@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function shufAllImages() {
-	let allImages = ['<i id= "1" class = "fa-solid fa-music"></i>', '<i id= "2" class = "fa-solid fa-star"></i>', '<i id= "3" class = "fa-solid fa-heart"></i>', '<i id= "4" class = "fa-regular fa-face-smile"></i>', '<i id= "5" class = "fa-regular fa-bell"></i>', '<i id= "6" class = "fa-solid fa-bolt"></i>', '<i id= "7" class = "fa-solid fa-car"></i>', '<i id= "8" class = "fa-solid fa-umbrella"></i>', '<i id= "9" class = "fa-solid fa-headphones"></i>', '<i id= "10" class = "fa-solid fa-plane"></i>', '<i id= "11" class = "fa-solid fa-key"></i>', '<i id= "12" class = "fa-solid fa-bicycle"></i>', '<i id= "13" class = "fa-solid fa-sun"></i>', '<i id= "14" class = "fa-solid fa-car-side"></i>', '<i id= "15" class = "fa-solid fa-robot"></i>', '<i id= "16" class = "fa-solid fa-trophy"></i>', '<i id= "17" class = "fa-solid fa-circle-check"></i>', '<i id= "18" class = "fa-solid fa-glasses"></i>', '<i id= "19" class = "fa-solid fa-yin-yang"></i>', '<i id= "20" class = "fa-solid fa-suitcase"></i>', '<i id= "21" class = "fa-solid fa-skull"></i>', '<i id= "22" class = "fa-solid fa-sailboat"></i>', '<i id= "23" class = "fa-solid fa-rainbow"></i>', '<i id= "24" class = "fa-solid fa-radiation"></i>', '<i id= "25" class = "fa-solid fa-pizza-slice"></i>', '<i id= "26" class = "fa-solid fa-peace"></i>', '<i id= "27" class = "fa-solid fa-hourglass-half"></i>', '<i id= "28" class = "fa-solid fa-guitar"></i>', '<i id= "29" class = "fa-solid fa-fish-fins"></i>', '<i id= "30" class = "fa-solid fa-clover"></i>'];
+	// let allImages = ['<i id= "1" class = "fa-solid fa-music"></i>', '<i id= "2" class = "fa-solid fa-star"></i>', '<i id= "3" class = "fa-solid fa-heart"></i>', '<i id= "4" class = "fa-regular fa-face-smile"></i>', '<i id= "5" class = "fa-regular fa-bell"></i>', '<i id= "6" class = "fa-solid fa-bolt"></i>', '<i id= "7" class = "fa-solid fa-car"></i>', '<i id= "8" class = "fa-solid fa-umbrella"></i>', '<i id= "9" class = "fa-solid fa-headphones"></i>', '<i id= "10" class = "fa-solid fa-plane"></i>', '<i id= "11" class = "fa-solid fa-key"></i>', '<i id= "12" class = "fa-solid fa-bicycle"></i>', '<i id= "13" class = "fa-solid fa-sun"></i>', '<i id= "14" class = "fa-solid fa-car-side"></i>', '<i id= "15" class = "fa-solid fa-robot"></i>', '<i id= "16" class = "fa-solid fa-trophy"></i>', '<i id= "17" class = "fa-solid fa-circle-check"></i>', '<i id= "18" class = "fa-solid fa-glasses"></i>', '<i id= "19" class = "fa-solid fa-yin-yang"></i>', '<i id= "20" class = "fa-solid fa-suitcase"></i>', '<i id= "21" class = "fa-solid fa-skull"></i>', '<i id= "22" class = "fa-solid fa-sailboat"></i>', '<i id= "23" class = "fa-solid fa-rainbow"></i>', '<i id= "24" class = "fa-solid fa-radiation"></i>', '<i id= "25" class = "fa-solid fa-pizza-slice"></i>', '<i id= "26" class = "fa-solid fa-peace"></i>', '<i id= "27" class = "fa-solid fa-hourglass-half"></i>', '<i id= "28" class = "fa-solid fa-guitar"></i>', '<i id= "29" class = "fa-solid fa-fish-fins"></i>', '<i id= "30" class = "fa-solid fa-clover"></i>'];
+	let allImages = ['<i id = "music" class = "fa-solid fa-music"></i>', '<i id = "star" class = "fa-solid fa-star"></i>', '<i id = "heart" class = "fa-solid fa-heart"></i>', '<i id = "face-smile" class = "fa-regular fa-face-smile"></i>', '<i id = "bell" class = "fa-regular fa-bell"></i>', '<i id = "bolt" class = "fa-solid fa-bolt"></i>', '<i id = "car" class = "fa-solid fa-car"></i>', '<i id = "umbrella" class = "fa-solid fa-umbrella"></i>', '<i id = "headphones" class = "fa-solid fa-headphones"></i>', '<i id = "plane" class = "fa-solid fa-plane"></i>', '<i id = "key" class = "fa-solid fa-key"></i>', '<i id = "bicycle" class = "fa-solid fa-bicycle"></i>', '<i id = "sun" class = "fa-solid fa-sun"></i>', '<i id = "car-side" class = "fa-solid fa-car-side"></i>', '<i id = "robot" class = "fa-solid fa-robot"></i>', '<i id = "trophy" class = "fa-solid fa-trophy"></i>', '<i id = "check" class = "fa-solid fa-circle-check"></i>', '<i id = "glasses" class = "fa-solid fa-glasses"></i>', '<i id = "yin-yang" class = "fa-solid fa-yin-yang"></i>', '<i id = "suitcase" class = "fa-solid fa-suitcase"></i>', '<i id = "skull" class = "fa-solid fa-skull"></i>', '<i id = "sailboat" class = "fa-solid fa-sailboat"></i>', '<i id = "rainbow" class = "fa-solid fa-rainbow"></i>', '<i id = "radiation" class = "fa-solid fa-radiation"></i>', '<i id = "pizza-slice" class = "fa-solid fa-pizza-slice"></i>', '<i id = "peace" class = "fa-solid fa-peace"></i>', '<i id = "hourglass" class = "fa-solid fa-hourglass-half"></i>', '<i id = "guitar" class = "fa-solid fa-guitar"></i>', '<i id = "fish" class = "fa-solid fa-fish-fins"></i>', '<i id = "clover" class = "fa-solid fa-clover"></i>'];
 	
 	let currentIndex = allImages.length,  randomIndex;
   
@@ -222,28 +223,33 @@ function runGame() {
 	console.log("doublePosition1",doublePosition1);
 	console.log("doublePosition2",doublePosition2);
 	console.log("doubleImage",doubleImage);
-
+	
+	var correct1 = document.getElementById(doublePosition1);
+	var correctImg1 = correct1.children[0];
+	onClickImg(correctImg1.id);
+	console.log('correctImgId',correctImg1.id);
+	
+		
 	onClickImg();
 }
 
-function onClickImg() {
+function onClickImg(a) {
 	picsClick = document.getElementsByTagName("i");
 		for( var x=0; x < picsClick.length; x++ ) {
 		picsClick[x].onclick = function(){
-			alert('Correct:'+doubleImage);
- 			let correct = doubleImage;
-			console.log('Correct:',doubleImage);
+			alert("You picked the,"+this.id+", Correct image is the "+doubleImage);
+			// let correct = (doubleImage);
+			// let choice = ("Choice:,"+this.id+""+this.innerHTML);
+			let choice = (""+this.id+"");
+			// console.log('Correct:',correct);
+			console.log('choice',choice);
+			// console.log('correctImg1',correctImg1.id);
+			//console.log(correct1);
+					 
 
- 			};
 		}
+		
+	}
+	
 }
 
-function checkCorrectInage() {
-
-	
-	let doubleImg =  document.getElementsById("i")
-
-}
-	
-	
-	
