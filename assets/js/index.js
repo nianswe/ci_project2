@@ -240,6 +240,7 @@ function runGame() {
 }
 
 function onClickImg(a) {
+	start10SecTimer();
 	picsClick = document.getElementsByTagName("i");
 		for( var x=0; x < picsClick.length; x++ ) {
 		picsClick[x].onclick = function(){
@@ -302,34 +303,19 @@ function hidetimeisUpInfo() {
 	document.getElementById("timeisUpInfo").style.display = "none";
 };
 
-var timer;
-function countdownTimer(duration, display) {
-    timer = duration, seconds;
-    setInterval(function () {
-        seconds = parseInt(timer % 60, 10);
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = seconds;
-		
-        if (--timer <= 0) {
-			self.stop();
-			timer = duration;
-		}
-	 	  
-    }, 1000);
-	
-};
-
 function start10SecTimer() {
-    var tenSeconds = 10,
-        display = document.querySelector('#seconds');
-		countdownTimer(tenSeconds, display);
-		
-};
-
-function stopTimer() {
-    clearInterval(timer);
-	
-	
-	
-};
+	var timeleft = 10;
+	var downloadTimer = setInterval(function(){
+  		if(timeleft <= 0){
+    		clearInterval(downloadTimer);
+			timeisUpInfo()
+			document.querySelector('#time');
+			document.getElementById("seconds").innerHTML = "Finished";
+  		} else {
+    		document.getElementById("seconds").innerHTML = timeleft +"";
+  		}
+  		
+  		document.getElementById("progressBar").value = 10 - timeleft;
+  		timeleft -= 1;
+	}, 1000);
+}
