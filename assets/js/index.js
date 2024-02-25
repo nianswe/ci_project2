@@ -82,10 +82,9 @@ function doublePos2() {
 }
 
 function runGame() { 
-	
-	hideFinalScoreInfo();
-	hidetimeisUpInfo();
 	start10SecTimer();
+	hidetimeisUpInfo();
+	hideFinalScoreInfo()
 	
 	let images = shufAllImages();
 	let position = shufOrgPositions();
@@ -266,7 +265,8 @@ function onClickImg(a) {
 				alert("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				console.log('WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id');
 				showFinalScoreInfo();
-				document.getElementsByClassName("score").innerText = "0";
+				document.getElementById("score").innerText = currentScore;
+				return start10SecTimer;
 								
 			}
 		
@@ -276,8 +276,8 @@ function onClickImg(a) {
 
 function incrementScore() {
 
-    let currentScore = parseInt(document.getElementsByClassName("score").innerText);
-    document.getElementsByClassName("score").innerText = ++currentScore;
+    let currentScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++currentScore;
 	document.getElementById("finalScore").innerText = currentScore;
 
 }
@@ -295,7 +295,7 @@ function hideFinalScoreInfo() {
 function timeisUpInfo() {
 	
 	document.getElementById("timeisUpInfo").style.display = "block";
-	return;
+	
 	
 }
 
@@ -307,28 +307,36 @@ function hidetimeisUpInfo() {
 
 
 function start10SecTimer() {
-let timeleft = 10;
-let	coundownTimer = setInterval(function(){
-  		if(timeleft < 1){
-    		document.getElementsByclassName("seconds").innerHTML = "Out of time!";
-			;
-			return start10SecTimer;
+	let timeleft = 10;
+	let	coundownTimer = setInterval(function(){
+  		if(timeleft <= 1){
+    		clearInterval(coundownTimer);
+			stop10SecTimer();
+			document.getElementById("seconds").innerHTML = timeleft;
+			timeisUpInfo();
+			return;
+			
 		} else {
-    		hideFinalScoreInfo();
-			hidetimeisUpInfo();
+    		/* hideFinalScoreInfo(); */
+			/* hidetimeisUpInfo(); */
   			document.getElementById("progressBar").value = 11 - timeleft;
-  			document.getElementsByclassName("seconds").innerHTML = timeleft +"";
+  			document.getElementById("seconds").innerHTML = timeleft +"";
 			timeleft -= 1;
 			console.log(timeleft);
 		}
+		
 	}, 1000);
-	
+
 }
 
 function stop10SecTimer() {
+	clearInterval(start10SecTimer);
 	return start10SecTimer;
+	
+
 }
 
+hidetimeisUpInfo();
 // function StopTimerFunction() {
 //	clearInterval(start10SecTimer);
 //	timeisUpInfo();
