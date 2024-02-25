@@ -86,14 +86,17 @@
 
 }
 
+
+
 #finalScoreInfo,
 #timeisUpInfo {
     display:none;
     position: fixed;
     width: 90vw;
+    max-width: 600px;
     height:auto;
     border-radius: 20px;
-    margin-top: 20%;
+    margin-left: 5vw;
     background-color: rgba(9, 9, 9, 0.9);
     text-align: center;
 
@@ -101,8 +104,9 @@
 
 #finalScoreInfo p,
 #timeisUpInfo p {
-    padding-top: 10%;
+    padding-top: 5%;
     text-align: center;
+    font-size: 200%;
     color: whitesmoke;
 
 }
@@ -112,11 +116,12 @@
     font-size:xxx-large;
 }
 
-#finalScoreInfo button
+ #finalScoreInfo button,
 #timeisUpInfo button { 
     font-size: x-large;
     font-style: bold;
-    width: 60vw;
+    width: 90vw;
+    max-width: 600px;
     height: auto;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -180,14 +185,7 @@
     
 }
  
-.cella i:hover {
-    background-color: whitesmoke;
-  }
 
-.cellb i:hover {
-    background-color:lightgray;
-    ;
-}
 
 .row {
     display: table-row;
@@ -238,7 +236,10 @@
         }
 
     .cell i {
-            font-size: 450%;    
+            font-size: 450%; 
+            
+    
+        
 }
 
 /* Width 500px and up) */
@@ -249,8 +250,8 @@
 
     .cell i {
             font-size: 500%;    
+    }
 }
-
 
 
 @media screen and (min-width: 768px) {
@@ -264,8 +265,39 @@
     max-width: 60vw;
     }
 
-    .info-box {
-    
+    #finalScoreInfo,
+    #timeisUpInfo {
+        margin-left:13vw;
     }
+    .cella i:hover {
+        background-color: whitesmoke;
+      }
+    
+    .cellb i:hover {
+        background-color:lightgray;
+        ;
+    }
+    
+}
 
+@media screen and (min-width: 900px) {
+    #finalScoreInfo,
+    #timeisUpInfo {
+        margin-left:18vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #finalScoreInfo,
+    #timeisUpInfo {
+        margin-left:21vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #finalScoreInfo,
+    #timeisUpInfo {
+        margin-left:2vw;
+    }
+    
 }
