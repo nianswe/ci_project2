@@ -92,7 +92,7 @@ function runGame() {
 	hidetimeisUpInfo();
 	hideFinalScoreInfo();
 	hideRunGameButton();
-
+	
 	let images = shufAllImages();
 	let position = shufOrgPositions();
 	var pickedPos1 = [];
@@ -270,11 +270,15 @@ function onClickImg(a) {
 				runGame();
 			} else {
 				stop10SecTimer();
+				document.getElementById("finalScore2").innerText = "0";
 				showRunGameButton()
+				document.getElementById("score").innerText = "0";
 				alert("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				console.log("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
-				document.getElementById("score").innerText = currentScore;
+				document.getElementById("score").innerText = finalScore;
+				console.log('xfinalScore',finalScore);
 				showFinalScoreInfo();
+				resetScore();
 				return start10SecTimer;
 								
 			}
@@ -282,11 +286,27 @@ function onClickImg(a) {
 		}
 	}
 }
+
 var currentScore;
+var finalScore;
 function incrementScore() {  
     currentScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++currentScore;
-	document.getElementById("finalScore").innerText = currentScore;
+    finalScore = currentScore;
+	finalScore = ++finalScore;
+	document.getElementById("score").innerText = ++currentScore;
+	 
+	document.getElementById("finalScore1").innerText = finalScore;
+	document.getElementById("finalScore2").innerText = finalScore;
+	console.log('currentScore',currentScore);
+	console.log('yfinalScore',finalScore);
+
+}
+
+function resetScore() {
+	currentScore = 0;
+	document.getElementById("score").innerText = "0";
+	
+
 
 }
 
@@ -323,18 +343,20 @@ var	coundownTimer;
 function start10SecTimer() {
 	let timeleft = 10;
 	coundownTimer = setInterval(function(){
-  		if(timeleft <= 1){
+  		if(timeleft <= 0){
     		clearInterval(coundownTimer);
 			stop10SecTimer();
-			hideRunGameButton();
+			showRunGameButton(); 
 			document.getElementById("seconds").innerHTML = timeleft;
 			timeisUpInfo();
+			resetScore();
+			console.log(currentScore);
 			return;
 			
 		} else {
     		hideFinalScoreInfo(); 
 			hidetimeisUpInfo();
-			showRunGameButton(); 
+			hideRunGameButton();
   			document.getElementById("progressBar").value = 11 - timeleft;
   			document.getElementById("seconds").innerHTML = timeleft +"";
 			timeleft -= 1;
