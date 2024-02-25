@@ -7,8 +7,13 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "runGame") {
+			// start10SecTimer()
 			runGame();
-            
+			
+			// Reset Game Button
+			} else if (this.getAttribute("data-type") === "resetGame") {
+			stop10SecTimer();
+			
 			// } else if (this.getAttribute("data-type") === "shufAllImages") {
 			// shufAllImages();
 			// } else if (this.getAttribute("data-type") === "double") {
@@ -82,10 +87,12 @@ function doublePos2() {
 }
 
 function runGame() { 
+	stop10SecTimer();
 	start10SecTimer();
 	hidetimeisUpInfo();
-	hideFinalScoreInfo()
-	
+	hideFinalScoreInfo();
+	hideRunGameButton();
+
 	let images = shufAllImages();
 	let position = shufOrgPositions();
 	var pickedPos1 = [];
@@ -256,16 +263,18 @@ function onClickImg(a) {
 			 
 			if (choice === correctImg1.id) {
 				stop10SecTimer();
+				showRunGameButton()
 				alert("CORRECT ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				console.log('CORRECT ANSWER!');
 				incrementScore();
 				runGame();
 			} else {
 				stop10SecTimer();
+				showRunGameButton()
 				alert("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
-				console.log('WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id');
-				showFinalScoreInfo();
+				console.log("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				document.getElementById("score").innerText = currentScore;
+				showFinalScoreInfo();
 				return start10SecTimer;
 								
 			}
@@ -273,10 +282,9 @@ function onClickImg(a) {
 		}
 	}
 }
-
-function incrementScore() {
-
-    let currentScore = parseInt(document.getElementById("score").innerText);
+var currentScore;
+function incrementScore() {  
+    currentScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++currentScore;
 	document.getElementById("finalScore").innerText = currentScore;
 
@@ -286,11 +294,17 @@ function showFinalScoreInfo() {
 	document.getElementById("finalScoreInfo").style.display = "block";
 }
 
+function showRunGameButton() {
+	document.getElementById("runGame").style.visibility = 'visible';
+}
+
 function hideFinalScoreInfo() {
 	document.getElementById("finalScoreInfo").style.display = "none";
 }
 
-
+function hideRunGameButton() {
+	document.getElementById("runGame").style.visibility = 'hidden';
+}
 
 function timeisUpInfo() {
 	
@@ -305,20 +319,22 @@ function hidetimeisUpInfo() {
 	document.getElementById("timeisUpInfo").style.display = "none";
 };
 
-
+var	coundownTimer;
 function start10SecTimer() {
 	let timeleft = 10;
-	let	coundownTimer = setInterval(function(){
+	coundownTimer = setInterval(function(){
   		if(timeleft <= 1){
     		clearInterval(coundownTimer);
 			stop10SecTimer();
+			hideRunGameButton();
 			document.getElementById("seconds").innerHTML = timeleft;
 			timeisUpInfo();
 			return;
 			
 		} else {
-    		/* hideFinalScoreInfo(); */
-			/* hidetimeisUpInfo(); */
+    		hideFinalScoreInfo(); 
+			hidetimeisUpInfo();
+			showRunGameButton(); 
   			document.getElementById("progressBar").value = 11 - timeleft;
   			document.getElementById("seconds").innerHTML = timeleft +"";
 			timeleft -= 1;
@@ -330,15 +346,6 @@ function start10SecTimer() {
 }
 
 function stop10SecTimer() {
-	clearInterval(start10SecTimer);
-	return start10SecTimer;
-	
-
+	clearInterval(coundownTimer);
+	// return start10SecTimer;
 }
-
-hidetimeisUpInfo();
-// function StopTimerFunction() {
-//	clearInterval(start10SecTimer);
-//	timeisUpInfo();
-	//return start10SecTimer;
-// }
