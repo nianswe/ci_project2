@@ -15,10 +15,24 @@
 <!-- Body -->
 <body>
 	<!-- Heading with logo -->
-	<h2 class="heading">
+	<header class="heading">
+		<a href="index.html"></a>
+		<!--  Nav toggle/Dropdown menu : credit and inspiration from CI Love Running project -->
+		<input type="checkbox" id="nav-toggle" name="nav-toggle">
+		<label for="nav-toggle" class="nav-toggle-label"><i class="fa-solid fa-bars"></i>
+		</label>
+
+	<!-- Menu -->
+	<nav>
+		<ul id="menu">
+			<li><button id="levelTurtle">Level TURTLE - no timer</button></li>
+			<li><button id="levelRabbit">Level RABBIT - timer 10 sec. then new cards</button></li>
+			<li><button id="levelViper">Level VIPER - timer 10 sec. then Game Over</button></li>
+		</ul>  
+	</nav>
 		<img class="logo" src="assets/images/logo.png" alt="logo">
 		<br><p id = "logotext">Spot the double on the two cards!</p>
-	</h2>
+	</header>
 	<progress value="0" max="10" id="progressBar"></progress>
 	<!-- Background div -->
 	<div class="background">
