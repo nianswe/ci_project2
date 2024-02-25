@@ -1,6 +1,8 @@
 /* Google fonts import : font-family: 'Lato', sans-serif, font-family: 'Poor Story', system-ui;*/
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poor+Story&display=swap');
-
+@font-face { font-family: "Digital-7 Mono;"; src: url("https://www.1001fonts.com/digital-7-font.html");
+    
+}
 /* Asterisk wildcard selector to override default styles from browser */
 * {
     padding: 0;
@@ -22,10 +24,11 @@
 }
 
 .background {
-	height: 100%;
-	width: 100vw;
+	width: 1024px;
+    height: 100%;
+	
 	display: flex;
-	justify-content: center;
+	align-items: center;
 }
 
 .game-area {
@@ -40,9 +43,21 @@
     margin-left: auto;
     margin-right: auto;
     width: 85vw;
-    max-width: 500px;
+    max-width: 400px;
     height: 85vw;
-    max-height: 500px;
+    max-height: 400px;
+    padding:5px;
+}
+
+.game-plan2 {
+	background-color: whitesmoke;
+    border-radius: 50%;
+	margin-left: auto;
+    margin-right: auto;
+    width: 85vw;
+    max-width: 400px;
+    height: 85vw;
+    max-height: 400px;
     padding:5px;
 }
 
@@ -53,6 +68,10 @@
     height:auto;
     background-color: white;
 
+}
+
+.info-box-large {
+    display:none;
 }
 
 .info-box button,
@@ -112,6 +131,9 @@
     border-radius: 10% 10%;
 }
 
+.score-board span {
+    font-family: 'Digital-7 Mono';
+}
 .count-down {
     height:10%;
     width:20%;
@@ -120,23 +142,13 @@
 }
 
 
-.game-plan2 {
-	background-color: whitesmoke;
-    border-radius: 50%;
-	margin-left: auto;
-    margin-right: auto;
-    width: 85vw;
-    max-width: 500px;
-    height: 85vw;
-    max-height: 500px;
-    padding:5px;
-}
+
 
 .card {
 	width: 80%;
-    max-width: 500px;
+    max-width: 400px;
     height: 80%;
-    max-height: 500px;
+    max-height: 400px;
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
@@ -197,8 +209,8 @@
      
 }
 
-/* Width 375px and up) */
-@media screen and (min-width: 375px) {
+/* Width 360px and up) */
+@media screen and (min-width: 360px) {
     .cell i {
         font-size: 400%;
         padding-top: 15%;
@@ -206,7 +218,40 @@
         padding-left: 10%;
         padding-right: 10%;
     }
+
+    .card {
+    margin-top: 5%;
+    }
 }
+
+/* Width 390px and up) */
+@media screen and (min-width: 390px) {
+    .card {
+        margin-top: 7%;
+        }
+}
+
+/* Width 430px and up) */
+@media screen and (min-width: 430px) {
+    .card {
+        margin-top: 7%;
+        }
+
+    .cell i {
+            font-size: 450%;    
+}
+
+/* Width 500px and up) */
+@media screen and (min-width: 450px) {
+    .card {
+        margin-top: 5%;
+        }
+
+    .cell i {
+            font-size: 500%;    
+}
+
+
 
 @media screen and (min-width: 768px) {
     .heading {
@@ -219,26 +264,8 @@
     max-width: 60vw;
     }
 
-}
-
-/* Width 1024px and up) */
-@media screen and (min-width: 1024px) {
-    .logo {
-        width: 30vw;
+    .info-box {
+    
     }
-   
-    .game-area {    
-        display: grid;
-        grid-auto-rows: 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        max-width: 1200px;
-    } 
 
-    .cell i {
-        font-size: 400%;
-        padding-top: 25%;
-        padding-bottom: 25%;
-        padding-left: 10%;
-        padding-right: 10%;
-    }
 }

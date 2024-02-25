@@ -82,9 +82,11 @@ function doublePos2() {
 }
 
 function runGame() { 
+	
 	hideFinalScoreInfo();
 	hidetimeisUpInfo();
-	// start10SecTimer();
+	start10SecTimer();
+	
 	let images = shufAllImages();
 	let position = shufOrgPositions();
 	var pickedPos1 = [];
@@ -240,7 +242,6 @@ function runGame() {
 }
 
 function onClickImg(a) {
-	// start10SecTimer();
 	picsClick = document.getElementsByTagName("i");
 		for( var x=0; x < picsClick.length; x++ ) {
 		picsClick[x].onclick = function(){
@@ -253,17 +254,19 @@ function onClickImg(a) {
 			// console.log('correct1', correct1);
 			console.log('correctImg1', correctImg1.id);
 			
-			let pickedCorrectAnnswer 
+			 
 			if (choice === correctImg1.id) {
+				stop10SecTimer();
 				alert("CORRECT ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				console.log('CORRECT ANSWER!');
 				incrementScore();
 				runGame();
 			} else {
+				stop10SecTimer();
 				alert("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
 				console.log('WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id');
 				showFinalScoreInfo();
-				document.getElementById("score").innerText = "0";
+				document.getElementsByClassName("score").innerText = "0";
 								
 			}
 		
@@ -273,19 +276,17 @@ function onClickImg(a) {
 
 function incrementScore() {
 
-    let currentScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++currentScore;
+    let currentScore = parseInt(document.getElementsByClassName("score").innerText);
+    document.getElementsByClassName("score").innerText = ++currentScore;
 	document.getElementById("finalScore").innerText = currentScore;
 
 }
 
 function showFinalScoreInfo() {
-	
 	document.getElementById("finalScoreInfo").style.display = "block";
 }
 
 function hideFinalScoreInfo() {
-	
 	document.getElementById("finalScoreInfo").style.display = "none";
 }
 
@@ -294,28 +295,42 @@ function hideFinalScoreInfo() {
 function timeisUpInfo() {
 	
 	document.getElementById("timeisUpInfo").style.display = "block";
-	return start10SecTimer; 
-	return countdownTimer;
+	return;
+	
 }
+
 
 function hidetimeisUpInfo() {
 	
 	document.getElementById("timeisUpInfo").style.display = "none";
 };
 
+
 function start10SecTimer() {
-	var timeleft = 10;
-	var downloadTimer = setInterval(function(){
-  		if(timeleft <= 0){
-    		clearInterval(downloadTimer);
-			timeisUpInfo()
-			document.getElementById("seconds").innerHTML = "Finished";
-			return;
-  		} else {
-    		document.getElementById("seconds").innerHTML = timeleft +"";
-  		}
-  		
-  		document.getElementById("progressBar").value = 10 - timeleft;
-  		timeleft -= 1;
+let timeleft = 10;
+let	coundownTimer = setInterval(function(){
+  		if(timeleft < 1){
+    		document.getElementsByclassName("seconds").innerHTML = "Out of time!";
+			;
+			return start10SecTimer;
+		} else {
+    		hideFinalScoreInfo();
+			hidetimeisUpInfo();
+  			document.getElementById("progressBar").value = 11 - timeleft;
+  			document.getElementsByclassName("seconds").innerHTML = timeleft +"";
+			timeleft -= 1;
+			console.log(timeleft);
+		}
 	}, 1000);
+	
 }
+
+function stop10SecTimer() {
+	return start10SecTimer;
+}
+
+// function StopTimerFunction() {
+//	clearInterval(start10SecTimer);
+//	timeisUpInfo();
+	//return start10SecTimer;
+// }

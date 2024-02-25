@@ -8,6 +8,7 @@
     <!-- Favicon -->
 		<link rel='shortcut icon' type='image/x-icon' href='assets/images/favicon.ico' />
     <link rel="stylesheet" href="assets/css/style.css">
+	
     <!-- Title -->
 		<title>spOtThedOuble</title>
 </head>
@@ -71,21 +72,17 @@
 			
 			<!-- Info box -->
 			<div class="info-box">
-				
-				<button data-type="runGame" class="runGame">Run Game!</button>
-				<!-- <button data-type="shufAllImages" class="shufAllImages">shufAllImages</button> -->
-				<!-- <button data-type="double" class="double">doublePos</button>¨-->
-				<!-- <button data-type="addImgToCard" class="addImgToCard">Add Img To Card</button> -->
-
 				<!-- Score Board-->
 				<div class ="score-board">
 					<p class="scores">SCORE:<br><span id="score">0</span></p>
         		</div> 
+				<!-- Run Game Button -->
+				<button data-type="runGame" class="runGame">Run Game!</button>
 				<!-- Time count down -->
 				<div class ="count-down">
-					<p class="timer">TIMER:<br><span id="seconds">10</span> sec.</p>
+					<p class="timer">TIMER:<br><span id="seconds">10</span></p>
 				</div>
-		 	</div>
+			</div>
 			 
 			
 
@@ -118,7 +115,19 @@
 				</div>		
 			</div>
 			
-			
+			<!-- Info box -->
+			<div class="info-box-large">
+				<!-- Score Board-->
+				<div class ="score-board">
+					<p class="scores">SCORE:<br><span class="score">0</span></p>
+        		</div> 
+				<button data-type="runGame" class="runGame">Run Game!</button>
+				<!-- Time count down -->
+				<div class ="count-down">
+					<p class="timer">TIMER:<br><span class="seconds">10</span></p>
+				</div>
+		 	</div>
+
 		</div>
 	</div>		    
     
