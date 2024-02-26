@@ -110,9 +110,15 @@
     font-size: 200%;
     color: whitesmoke;
 }
+
+#correctImage1,
+#correctImage2 {
+    font-weight: bold;
+}
+
 /* Final Score and Time is Up span elements */
-#finalScoreInfo span,
-#timeisUpInfo span {
+#finalScore1,
+#finalScore2 {
     font-family: 'Lato', sans-serif; 
     font-weight: 900;
     font-size:xxx-large;

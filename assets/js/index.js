@@ -233,7 +233,7 @@ function onClickImg() {
 				    // Reset final Score value on Time is up Window and Final score window to 0
             // document.getElementById("finalScore1").innerText = "0";
             // document.getElementById("finalScore2").innerText = "0";
-            console.log 
+            
 				    // Make Run Game button visuable
             showRunGameButton()
 				    // Reset Score value in Score section to 0
@@ -242,6 +242,8 @@ function onClickImg() {
             alert("     WRONG ANSWER!     \nYou picked the: \n     "+this.id+"\n Correct image is the:\n     "+correctImg1.id);
 				    //Add final score to final score window
             document.getElementById("finalScore1").innerText = finalScore;
+            document.getElementById("correctImage1").innerText = correctImg1.id;
+            console.log(correctImg1.id);
 				    // View Final Score Window with final score
             showFinalScoreInfo();
 				    // Reset Score value in Score section to 0
@@ -326,6 +328,7 @@ function startTimer() {
       //Add final score to Time is up window
       document.getElementById("finalScore2").innerText = "0";
       document.getElementById("finalScore2").innerText = finalScore;
+      document.getElementById("correctImage2").innerText = correctImg1.id;
       // View Final Score Window with final score
       timeisUpInfo();
       // Reset Score value in Score section to 0
