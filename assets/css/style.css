@@ -1,8 +1,6 @@
 /* Google fonts import : font-family: 'Lato', sans-serif, font-family: 'Poor Story', system-ui;*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poor+Story&display=swap');
-@font-face { font-family: "Digital-7 Mono;"; src: url("https://www.1001fonts.com/digital-7-font.html");
-    
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 /* Asterisk wildcard selector to override default styles from browser */
 * {
     padding: 0;
@@ -12,29 +10,40 @@
 
 .heading {
 	text-align: center;
-	max-height: 100px;
+    max-height: 90px;
+     
 } 
 
 .logo {
 	width: 400px;
     height: auto;
     margin-top: 5px;
-    max-height: 100px;
+    max-height: 90px;
     max-width: 70vw;
 }
 
+#logotext {
+    font-family: 'Lato', sans-serif;
+    font-size: 110%;
+    font-weight: bold;
+
+}
+
 .background {
-	width: 1024px;
+	width: 100%;
+    max-width: 1024px;
     height: 100%;
-	
-	display: flex;
-	align-items: center;
+    display: flex;
+	/* align-content: center; */
 }
 
 .game-area {
 	background-color: darkgray;
 	width: 100vw;
+    /* max-width: 1024px; */
 	height: 100hv; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .game-plan1 {
@@ -77,16 +86,12 @@
 .info-box button,
 .info-box p  {
     text-align: center;
-    border-radius: 10% 10%;
+    border-radius: 15px 15px;
     padding: 5px;
-    
-    font-weight: bold;
-    font-size: 110%;
-    
-
+    font-family: 'Lato', sans-serif; 
+    font-weight: 900;
+    font-size: 120%;
 }
-
-
 
 #finalScoreInfo,
 #timeisUpInfo {
@@ -106,6 +111,7 @@
 #timeisUpInfo p {
     padding-top: 5%;
     text-align: center;
+    font-family: 'Lato', sans-serif; 
     font-size: 200%;
     color: whitesmoke;
 
@@ -113,11 +119,14 @@
 
 #finalScoreInfo span,
 #timeisUpInfo span {
+    font-family: 'Lato', sans-serif; 
+    font-weight: 900;
     font-size:xxx-large;
 }
 
  #finalScoreInfo button,
 #timeisUpInfo button { 
+    font-family: 'Lato', sans-serif; 
     font-size: x-large;
     font-style: bold;
     width: 90vw;
@@ -136,8 +145,12 @@
     border-radius: 10% 10%;
 }
 
-.score-board span {
-    font-family: 'Digital-7 Mono';
+.score-board span,
+.count-down span {
+    font-family: 'Lato', sans-serif; 
+    font-size: 150%;
+    font-weight: 900;
+    
 }
 .count-down {
     height:10%;
@@ -145,9 +158,6 @@
     background-color: white;
     border-radius: 10% 10%;
 }
-
-
-
 
 .card {
 	width: 80%;
@@ -204,8 +214,10 @@
 #progressBar {
     width: 100vw;
     height: 1rem;
-     
+  
 }
+
+
 
 /* Width 360px and up) */
 @media screen and (min-width: 360px) {

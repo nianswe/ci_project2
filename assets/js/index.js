@@ -8,11 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "runGame") {
 			// start10SecTimer()
-			runGame();
-			
-			// Reset Game Button
-			} else if (this.getAttribute("data-type") === "resetGame") {
-			stop10SecTimer();
+				runGame();
+			// Quit Game Button
+			} else if (this.getAttribute("data-type") === "quitGame") {
+				location.reload();
 			
 			// } else if (this.getAttribute("data-type") === "shufAllImages") {
 			// shufAllImages();
@@ -194,7 +193,6 @@ function runGame() {
 	console.log("pickedPos18", pickedPos18);
 	console.log("doubleImage ", doubleImage);
 	
-
 	console.log("pickedImg1", pickedImg1);
 	console.log("pickedImg2", pickedImg2);
 	console.log("pickedImg3", pickedImg3);
@@ -214,26 +212,26 @@ function runGame() {
 	console.log("pickedImg17", pickedImg17);
 	console.log("pickedImg18", pickedImg18);
 
-		document.getElementById(pickedPos1).innerHTML = pickedImg1;
-		document.getElementById(pickedPos2).innerHTML = pickedImg2;
-		document.getElementById(pickedPos3).innerHTML = pickedImg3;
-		document.getElementById(pickedPos4).innerHTML = pickedImg4;
-		document.getElementById(pickedPos5).innerHTML = pickedImg5;
-		document.getElementById(pickedPos6).innerHTML = pickedImg6;
-		document.getElementById(pickedPos7).innerHTML = pickedImg7;
-		document.getElementById(pickedPos8).innerHTML = pickedImg8;
-		document.getElementById(pickedPos9).innerHTML = pickedImg9;
-		document.getElementById(pickedPos10).innerHTML = pickedImg10;
-		document.getElementById(pickedPos11).innerHTML = pickedImg11;
-		document.getElementById(pickedPos12).innerHTML = pickedImg12;
-		document.getElementById(pickedPos13).innerHTML = pickedImg13;
-		document.getElementById(pickedPos14).innerHTML = pickedImg14;
-		document.getElementById(pickedPos15).innerHTML = pickedImg15;
-		document.getElementById(pickedPos16).innerHTML = pickedImg16;
-		document.getElementById(pickedPos17).innerHTML = pickedImg17;
-		document.getElementById(pickedPos18).innerHTML = pickedImg18;
-		document.getElementById(doublePosition1).innerHTML = doubleImage;
-		document.getElementById(doublePosition2).innerHTML = doubleImage;
+	document.getElementById(pickedPos1).innerHTML = pickedImg1;
+	document.getElementById(pickedPos2).innerHTML = pickedImg2;
+	document.getElementById(pickedPos3).innerHTML = pickedImg3;
+	document.getElementById(pickedPos4).innerHTML = pickedImg4;
+	document.getElementById(pickedPos5).innerHTML = pickedImg5;
+	document.getElementById(pickedPos6).innerHTML = pickedImg6;
+	document.getElementById(pickedPos7).innerHTML = pickedImg7;
+	document.getElementById(pickedPos8).innerHTML = pickedImg8;
+	document.getElementById(pickedPos9).innerHTML = pickedImg9;
+	document.getElementById(pickedPos10).innerHTML = pickedImg10;
+	document.getElementById(pickedPos11).innerHTML = pickedImg11;
+	document.getElementById(pickedPos12).innerHTML = pickedImg12;
+	document.getElementById(pickedPos13).innerHTML = pickedImg13;
+	document.getElementById(pickedPos14).innerHTML = pickedImg14;
+	document.getElementById(pickedPos15).innerHTML = pickedImg15;
+	document.getElementById(pickedPos16).innerHTML = pickedImg16;
+	document.getElementById(pickedPos17).innerHTML = pickedImg17;
+	document.getElementById(pickedPos18).innerHTML = pickedImg18;
+	document.getElementById(doublePosition1).innerHTML = doubleImage;
+	document.getElementById(doublePosition2).innerHTML = doubleImage;
 	console.log("doublePosition1",doublePosition1);
 	console.log("doublePosition2",doublePosition2);
 	console.log("doubleImage",doubleImage);
@@ -242,8 +240,6 @@ function runGame() {
 	correctImg1 = correct1.children[0];
 	onClickImg(correctImg1.id);
 	// console.log('correctImgId',correctImg1.id);
-	
-		
 	onClickImg();
 }
 
@@ -264,7 +260,7 @@ function onClickImg(a) {
 			if (choice === correctImg1.id) {
 				stop10SecTimer();
 				showRunGameButton()
-				alert("CORRECT ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
+				alert("     CORRECT ANSWER!     \nYou picked the:\n     "+this.id+"     \nCorrect image is the:\n     "+correctImg1.id);
 				console.log('CORRECT ANSWER!');
 				incrementScore();
 				runGame();
@@ -273,10 +269,9 @@ function onClickImg(a) {
 				document.getElementById("finalScore2").innerText = "0";
 				showRunGameButton()
 				document.getElementById("score").innerText = "0";
-				alert("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
-				console.log("WRONG ANSWER!  You picked the,"+this.id+", Correct image is the "+correctImg1.id);
+				alert("     WRONG ANSWER!     \nYou picked the: \n     "+this.id+"\n Correct image is the:\n     "+correctImg1.id);
+				console.log("WRONG ANSWER!\n You picked the,\n"+this.id+",\n Correct image is the\n "+correctImg1.id);
 				document.getElementById("score").innerText = finalScore;
-				console.log('xfinalScore',finalScore);
 				showFinalScoreInfo();
 				resetScore();
 				return start10SecTimer;
@@ -305,9 +300,6 @@ function incrementScore() {
 function resetScore() {
 	currentScore = 0;
 	document.getElementById("score").innerText = "0";
-	
-
-
 }
 
 function showFinalScoreInfo() {
@@ -327,15 +319,11 @@ function hideRunGameButton() {
 }
 
 function timeisUpInfo() {
-	
 	document.getElementById("timeisUpInfo").style.display = "block";
-	
-	
 }
 
 
 function hidetimeisUpInfo() {
-	
 	document.getElementById("timeisUpInfo").style.display = "none";
 };
 
@@ -352,7 +340,6 @@ function start10SecTimer() {
 			resetScore();
 			console.log(currentScore);
 			return;
-			
 		} else {
     		hideFinalScoreInfo(); 
 			hidetimeisUpInfo();
@@ -362,9 +349,7 @@ function start10SecTimer() {
 			timeleft -= 1;
 			console.log(timeleft);
 		}
-		
 	}, 1000);
-
 }
 
 function stop10SecTimer() {
