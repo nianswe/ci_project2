@@ -23,36 +23,6 @@
     max-width: 70vw;
 }
 
-/* Navigation bar styles with dropdown toggle */
-nav {
-    position: absolute;
-    background-color: rgba(9, 9, 9, 0.9); 
-    width: auto;
-    right: 0;
-    padding: 0 2rem;
-    border-radius: 0 3%;
-    box-shadow: 3px 3px 3px black;
-    display: none;
-    top: 100%;
-}
-
-/* Nav toggle : credit and inspitaion from CI Love Running project */
-#nav-toggle:checked~nav {
-    display: block;
-}
-
-#nav-toggle {
-    display: none;
-}
-
-.nav-toggle-label {
-    margin-top: 45px;
-    /* margin-right: 0; */
-    font-size: 2rem;
-    color: black;
-}
-
-
 .background {
 	width: 1024px;
     height: 100%;
