@@ -216,6 +216,7 @@
 
     .cell i {
             font-size: 450%; 
+    }
 }
 /* Media query: Screen width (450px and up) */
 @media screen and (min-width: 450px) {
