@@ -290,7 +290,7 @@
 @media screen and (min-width: 900px) {
     #finalScoreInfo,
     #timeisUpInfo {
-        margin-left:18vw;
+        margin-left:19vw;
     }
 }
 
@@ -301,7 +301,22 @@
     }
 }
 
+@media screen and (min-width: 1100px) {
+    #finalScoreInfo,
+    #timeisUpInfo {
+        margin-left:23vw;
+    }
+}
+
 @media screen and (min-width: 1200px) {
+    #finalScoreInfo,
+    #timeisUpInfo {
+        margin-left:25vw;
+    }
+}
+
+
+@media screen and (min-width: 1400px) {
     #finalScoreInfo,
     #timeisUpInfo {
         margin-left:2vw;
