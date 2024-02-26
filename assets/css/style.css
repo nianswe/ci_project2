@@ -41,7 +41,7 @@
 	background-color: darkgray;
 	width: 100vw;
     /* max-width: 1024px; */
-	height: 100hv; 
+	height: 100vh; 
     margin-left: auto;
     margin-right: auto;
 }
@@ -128,7 +128,7 @@
 #timeisUpInfo button { 
     font-family: 'Lato', sans-serif; 
     font-size: x-large;
-    font-style: bold;
+    /* font-weight: bold; */
     width: 90vw;
     max-width: 600px;
     height: auto;
@@ -267,6 +267,9 @@
     .nav-toggle-label {
         font-size: 4rem;
     }
+    .info-box button {
+        width: 200px;
+    }
 }
 
 
@@ -296,6 +299,7 @@
     .nav-toggle-label {
         font-size: 4.5rem;
     }
+    
     
 }
 
