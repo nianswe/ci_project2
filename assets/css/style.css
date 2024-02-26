@@ -82,7 +82,8 @@
     text-align: center;
     border-radius: 15px 15px;
     padding: 5px;
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Lato', sans-serif;
+    color:black; 
     font-weight: 900;
     font-size: 120%;
 }

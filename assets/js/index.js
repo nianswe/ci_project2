@@ -68,14 +68,14 @@ function doublePos2() {
 	return doublePos2
 }
 
+// Function to start/restart game 
 function newGame() {
   resetScore();
   stopTimer();
   runGame();
-
 }
 
-// Function to start game and get random images on the two cards
+// Function to continue game and get random new images on the two cards
 function runGame() { 
 	stopTimer();
 	startTimer();
