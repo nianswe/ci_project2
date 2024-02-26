@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
 let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
         button.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === "runGame") {
+            if (this.getAttribute("data-type") === "newGame") {
 			// StartTimer()
-				runGame();
+      newGame();
 			// Quit Game Button
 			} else if (this.getAttribute("data-type") === "quitGame") {
 				location.reload();
@@ -14,7 +14,6 @@ let buttons = document.getElementsByTagName("button");
 		});
 	};
 });
-
 
 // Variable for Correct chosen div/cell card1 for validation if correct image is picked
 var correct1; 
@@ -67,6 +66,13 @@ function doublePos1() {
 function doublePos2() {
 	var doublePos2 = secondCardPos[(Math.floor(Math.random() * secondCardPos.length))];
 	return doublePos2
+}
+
+function newGame() {
+  resetScore();
+  stopTimer();
+  runGame();
+
 }
 
 // Function to start game and get random images on the two cards
@@ -225,8 +231,8 @@ function onClickImg() {
 				    // Stop and reset Timer
             stopTimer();
 				    // Reset final Score value on Time is up Window and Final score window to 0
-            document.getElementById("finalScore1").innerText = "0";
-            document.getElementById("finalScore2").innerText = "0";
+            // document.getElementById("finalScore1").innerText = "0";
+            // document.getElementById("finalScore2").innerText = "0";
             console.log 
 				    // Make Run Game button visuable
             showRunGameButton()
@@ -239,7 +245,7 @@ function onClickImg() {
 				    // View Final Score Window with final score
             showFinalScoreInfo();
 				    // Reset Score value in Score section to 0
-            resetScore();
+            // resetScore();
 				    return startTimer;
 			    }
       }  
@@ -262,14 +268,19 @@ function incrementScore() {
 	document.getElementById("finalScore1").innerText = finalScore;
 	// Set Final score value to Time Is Up Window.
   document.getElementById("finalScore2").innerText = finalScore;
+console.log(finalScore1);
+console.log(finalScore2);
+
+
 }
 
 // Reset score on score board, Final score info Window, Time Is Up Window to 0
 function resetScore() {
 	currentScore = 0;
+  finalScore = 0;
 	document.getElementById("score").innerText = "0";
-  // document.getElementById("finalScore1").innerText = "0";
-	// document.getElementById("finalScore2").innerText = "0";
+  document.getElementById("finalScore1").innerText = "0";
+	document.getElementById("finalScore2").innerText = "0";
 }
 
 // Show FinalScoreInfo Window, hidden by default.
@@ -278,7 +289,7 @@ function showFinalScoreInfo() {
 }
 // Show RunGameButton, hidden during ongoing game.
 function showRunGameButton() {
-	document.getElementById("runGame").style.visibility = 'visible';
+	document.getElementById("newGame").style.visibility = 'visible';
 }
 // Hide FinalScoreInfo Window when game starts
 function hideFinalScoreInfo() {
@@ -286,7 +297,7 @@ function hideFinalScoreInfo() {
 }
 // Hide RunGameButton when game starts
 function hideRunGameButton() {
-	document.getElementById("runGame").style.visibility = 'hidden';
+	document.getElementById("newGame").style.visibility = 'hidden';
 }
 // Show timeisUpInfo window, hidden during ongoing game.
 function timeisUpInfo() {
@@ -302,23 +313,28 @@ function startTimer() {
 	// Count down amount of seconds
   let timeleft = 20;
 	coundownTimer = setInterval(function(){
-  		// When it is out of time
-      if(timeleft <= 0){
-    		clearInterval(coundownTimer);
-			stopTimer();
-			// Show RunGameButton
+  	// When it is out of time
+     if(timeleft <= 0){
+    	clearInterval(coundownTimer);
+		  stopTimer();
+		  // Show RunGameButton 
       showRunGameButton(); 
-			// Show countdown seconds in span in Count-down div
+		  // Show countdown seconds in span in Count-down div
       document.getElementById("seconds").innerHTML = timeleft;
-			// Show timeisUpInfo window
+		  // Show timeisUpInfo window
+      
+      //Add final score to Time is up window
+      document.getElementById("finalScore2").innerText = "0";
+      document.getElementById("finalScore2").innerText = finalScore;
+      // View Final Score Window with final score
       timeisUpInfo();
-			// Reset score to 0
-      resetScore();
-			return;
-    
-    //Ongoing countdown
+      // Reset Score value in Score section to 0
+      // resetScore();
+      return startTimer;
+          
+      //Ongoing countdown
 		} else {
-    	// Hide FinalScoreInfo window
+      // Hide FinalScoreInfo window
       hideFinalScoreInfo();
       // Hide hidetimeisUpInfo window 
 			hidetimeisUpInfo();

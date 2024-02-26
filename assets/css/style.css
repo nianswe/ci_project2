@@ -120,8 +120,9 @@
  #finalScoreInfo button,
 #timeisUpInfo button { 
     font-family: 'Lato', sans-serif; 
+    color:black;
     font-size: x-large;
-    /* font-weight: bold; */
+    font-weight: bold;
     width: 90vw;
     max-width: 600px;
     height: auto;
