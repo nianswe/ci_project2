@@ -73,6 +73,20 @@ function newGame() {
   resetScore();
   stopTimer();
   runGame();
+
+  // Detect Device Type
+  if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  // When ready, auto-scroll 1px to hide URL bar
+  window.addEventListener("load", function () {
+      // Set a timeout...
+      setTimeout(function () {
+          // Hide the address bar!
+          window.scrollTo(0, 1);
+      }, 0);
+  });
+}
+
+
 }
 
 // Function to continue game and get random new images on the two cards
@@ -83,6 +97,9 @@ function runGame() {
 	hideFinalScoreInfo();
 	hideRunGameButton();
 	
+
+
+
   // All shuffled images 18 of total 30
 	let images = shufAllImages();
 	// All shuffled positions on the two cards
