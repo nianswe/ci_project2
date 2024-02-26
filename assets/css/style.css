@@ -31,6 +31,11 @@
     height: 100%;
     display: flex;
 }
+/* Progress bar on top for countdown timer */
+#progressBar {
+    width: 100vw;
+    height: 1rem;
+}
 /* Game area Div */
 .game-area {
 	background-color: darkgray;
@@ -51,7 +56,7 @@
     max-height: 400px;
     padding:5px;
 }
-
+/* Game Section 1 */
 .game-section2 {
 	background-color: whitesmoke;
     border-radius: 50%;
@@ -63,20 +68,15 @@
     max-height: 400px;
     padding:5px;
 }
-
+/* Info Box */
 .info-box {
     display:flex;
     justify-content: space-evenly;
     width: 100vw;
     height:auto;
     background-color: white;
-
 }
-
-.info-box-large {
-    display:none;
-}
-
+/* Info Box button and p */
 .info-box button,
 .info-box p  {
     text-align: center;
@@ -86,7 +86,7 @@
     font-weight: 900;
     font-size: 120%;
 }
-
+/* Final Score and Time is Up Windows */
 #finalScoreInfo,
 #timeisUpInfo {
     display:none;
@@ -100,7 +100,7 @@
     text-align: center;
 
 }
-
+/* Final Score p elements */
 #finalScoreInfo p,
 #timeisUpInfo p {
     padding-top: 5%;
@@ -108,16 +108,15 @@
     font-family: 'Lato', sans-serif; 
     font-size: 200%;
     color: whitesmoke;
-
 }
-
+/* Final Score and Time is Up span elements */
 #finalScoreInfo span,
 #timeisUpInfo span {
     font-family: 'Lato', sans-serif; 
     font-weight: 900;
     font-size:xxx-large;
 }
-
+/* Final Score and Time is Up buttons */
  #finalScoreInfo button,
 #timeisUpInfo button { 
     font-family: 'Lato', sans-serif; 
@@ -131,28 +130,28 @@
     text-align: center;
     border-radius: 20px;
 }
-
+/* Score Board */
 .score-board {
     height:10%;
     width:20%;
     background-color: white;
     border-radius: 10% 10%;
 }
-
+/* Score Board span elements*/
 .score-board span,
 .count-down span {
     font-family: 'Lato', sans-serif; 
     font-size: 150%;
     font-weight: 900;
-    
 }
+/* Count Down */
 .count-down {
     height:10%;
     width:20%;
     background-color: white;
     border-radius: 10% 10%;
 }
-
+/* Card div */ 
 .card {
 	width: 80%;
     max-width: 400px;
@@ -164,56 +163,28 @@
     display:table;
     table-layout:fixed;
     border-collapse: collapse;
-    
 }
-
-    /* justify-content: space-between; */
-    /* display: flex; */	
-
-
+/* Play Card divs */
 .card > * {
     text-align: center;
-    
-}
- 
-#card1 {
-					 
-}
-
-
-.cell i {
-	font-size: 300%;
-    
-    /*  border: 2px dotted #000000; */
-    border-radius: 30%;
-    
-}
- 
-
-
-.row {
+ }
+/* Table rows on Card */
+ .row {
     display: table-row;
 }
-
+/* Table cells on Card */
 .cell {
-    /* border: 2px dotted #000000; */
     height: 50px;
     width: 50px;
     display: table-cell;
-    
-    
-    
- }
-
-#progressBar {
-    width: 100vw;
-    height: 1rem;
-  
+}
+/* Images in table cells on Cards */
+.cell i {
+	font-size: 300%;
+    border-radius: 30%;
 }
 
-
-
-/* Width 360px and up) */
+/* Media query: Screen width (360px and up) */
 @media screen and (min-width: 360px) {
     .cell i {
         font-size: 400%;
@@ -222,24 +193,22 @@
         padding-left: 10%;
         padding-right: 10%;
     }
-
     .card {
     margin-top: 5%;
     }
 }
 
-/* Width 390px and up) */
+/* Media query: Screen width (390px and up) */
 @media screen and (min-width: 390px) {
     .card {
         margin-top: 7%;
         }
-
     .nav-toggle-label {
         font-size: 3rem;
     } 
 }
 
-/* Width 430px and up) */
+/* Media query: Screen width (430px and up) */
 @media screen and (min-width: 430px) {
     .card {
         margin-top: 7%;
@@ -248,7 +217,7 @@
     .cell i {
             font-size: 450%; 
 }
-/* Width 500px and up) */
+/* Media query: Screen width (450px and up) */
 @media screen and (min-width: 450px) {
     .card {
         margin-top: 5%;
@@ -264,17 +233,17 @@
         width: 200px;
     }
 }
+
+/* Media query: Screen width (768px and up) */
 @media screen and (min-width: 768px) {
     .heading {
         text-align: center;
         max-height: 150px;
     } 
-    
     .logo {
     max-height: 150px;
     max-width: 60vw;
     }
-
     #finalScoreInfo,
     #timeisUpInfo {
         margin-left:13vw;
@@ -282,7 +251,6 @@
     .cella i:hover {
         background-color: whitesmoke;
       }
-    
     .cellb i:hover {
         background-color:lightgray;
         ;
@@ -292,6 +260,7 @@
     }
 }
 
+/* Media query: Screen width (900px and up) */
 @media screen and (min-width: 900px) {
     #finalScoreInfo,
     #timeisUpInfo {
@@ -299,6 +268,7 @@
     }
 }
 
+/* Media query: Screen width (1024px and up) */
 @media screen and (min-width: 1024px) {
     #finalScoreInfo,
     #timeisUpInfo {
@@ -306,6 +276,7 @@
     }
 }
 
+/* Media query: Screen width (1100px and up) */
 @media screen and (min-width: 1100px) {
     #finalScoreInfo,
     #timeisUpInfo {
@@ -313,6 +284,7 @@
     }
 }
 
+/* Media query: Screen width (1200px and up) */
 @media screen and (min-width: 1200px) {
     #finalScoreInfo,
     #timeisUpInfo {
@@ -320,7 +292,7 @@
     }
 }
 
-
+/* Media query: Screen width (1400px and up) */
 @media screen and (min-width: 1400px) {
     #finalScoreInfo,
     #timeisUpInfo {
