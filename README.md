@@ -98,6 +98,14 @@ Spot The Double website is a game for kids or adults with a game section with tw
 
 ![Wireframe](https://github.com/nianswe/ci_project2/blob/main/media/wireframe.png)
 
+-__Final Score Info and Time Is Up Info Windows__
+ - The divs in HTML for this windows are hidden from start.
+ - The following functions show and hide the windows
+  - showFinalScoreInfo will show Final Score Info Window
+  - hideFinalScoreInfo will hide Final Score Info Window
+  - showtimeisUpInfo will show Time Is Up Info Window
+  - hidetimeisUpInfo will hide Time Is Up Info Window
+
 ## Testing 
 
 ### Manual Testing
