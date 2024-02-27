@@ -18,23 +18,23 @@ Spot The Double website is a game for kids or adults with a game section with tw
 - __Game Area__
 
   - The gaming area consists of two card sections devided by one information section, on the top it is a progress bar.
-  - The information section consists of a score section, a Run Game! buttion and a countdown section, the countdown is set to 20 seconds.
+  - The information section consists of a score section, a Run Game! button and a countdown section, the countdown is set to 20 seconds.
   - The two card sections consists of a round card, with 9 random images and one on each card is a double.
   When the game starts all images are stars.
-  - The progress bar starts moves in 10 steps counting down from 10 seconds. 
+  - The progress bar starts moving in 10 steps counting down from 10 seconds. 
 
 ![Game Area1](https://github.com/nianswe/ci_project2/blob/main/media/gamearea1.png)
 ![Game Area2](https://github.com/nianswe/ci_project2/blob/main/media/gamearea2.png)
 
-- __Popup/Alert messages when correct answer__
+- __Popup messages when correct answer__
 
-  - When the game runs and the correct double image is selected, a popup/warning message will appear saying Correct Answer.
+  - When the game runs and the correct double image is selected, a popup message will appear saying Correct Answer.
   - When you close the message on OK, two new cards with pictures will appear and the game will continue.
   - The score will increase with one. 
 
 ![Correct Answer](https://github.com/nianswe/ci_project2/blob/main/media/correctanswer.png)  
 
-- __Popup/Alert messages when wrong answer__
+- __Popup messages when wrong answer__
 
   - When the game runs and the wrong double image is selected, a popup message will appear saying Wrong Answer, and information about the image you selected and the correct image.
   - When you close the message on OK, a game over window appears and the game is over.
@@ -43,17 +43,17 @@ Spot The Double website is a game for kids or adults with a game section with tw
 
 - __Game Over Window__
 
- - The Game Over window appears when you close the popup message.
- - It gives you the information that the game is over and shows your score and the correct image you should have chosen.
- - On two buttons, you can choose to run a new game or exit the game, then the home page will appear.
+  - The Game Over window appears when you close the popup message.
+  - It gives you the information that the game is over and shows your score and the correct image you should have chosen.
+  - On two buttons, you can choose to run a new game or exit the game, then the home page will appear.
 
 ![Game Over](https://github.com/nianswe/ci_project2/blob/main/media/gameover.png)
 
 - __Time Is Up__
 
- - The Time Is Up window appears when you do not select an image before the timer reaches 0.
- - It gives you the information that the game is over and shows your score and the correct image you should have chosen.
- - On two buttons, you can choose to run a new game or exit the game, then the home page will appear. 
+  - The Time Is Up window appears when you do not select an image before the timer reaches 0.
+  - It gives you the information that the game is over and shows your score and the correct image you should have chosen.
+  - On two buttons, you can choose to run a new game or exit the game, then the home page will appear. 
 
 ![Time is up](https://github.com/nianswe/ci_project2/blob/main/media/timeisup.png)
 
@@ -74,22 +74,23 @@ Spot The Double website is a game for kids or adults with a game section with tw
 ![Score](https://github.com/nianswe/ci_project2/blob/main/media/score.png)
 
 -__Random images to 9 positions on 2 cards__
- - Array (allImages) with 30 images/icons from FontAwesome in format:
+ - Description of the steps
+  - Array (allImages) with 30 images/icons from FontAwesome in format:
        < i id = image class = fa-solid fa-image >< /i >.
- - Shuffle the images in array with function: shufAllImages.
- - Array (orgPosition) with all positions on the two cards [pos1 - pos18], odd on card1 (upper), even on card2 (botton).
- - Shuffle the positions in array with function: shufOrgPositions.
- - Functions doublePos1 and doublePos2 generate 2 random positions for double, one on each card.
- - RunGame function place each random image in each random position in div in card in HTLM.
- - RunGame function also gets correct position for double image on upper card to get Id of image to validate with Id on choosen image.
- - At validation in function onClickImg, Id of choosen image compairs with Id of correct double image.
- - If TRUE, game will coninue with two new card, if FALSE, game vill end with ability run a new game.
+  - Shuffle the images in array with function: shufAllImages.
+  - Array (orgPosition) with all positions on the two cards [pos1 - pos18], odd on card1 (upper), even on card2 (botton).
+  - Shuffle the positions in array with function: shufOrgPositions.
+  - Functions doublePos1 and doublePos2 generate 2 random positions for double, one on each card.
+  - RunGame function place each random image in each random position in div in card in HTLM.
+  - RunGame function also gets correct position for double image on upper card to get Id of image to validate with Id on choosen image.
+  - At validation in function onClickImg, Id of choosen image compairs with Id of correct double image.
+  - If TRUE, game will coninue with two new card, if FALSE, game vill end with ability run a new game.
 
 ### Future Possible Features
  - Menu in header with settings.
- - Different skill levels, 20, 10, 5 seconds countdown timer.
- - Different characters, images, colours, letters, numbers.
- - Name registration and high score list
+  - Different skill levels, 20, 10, 5 seconds countdown timer.
+  - Different characters, images, colours, letters, numbers.
+  - Name registration and high score list
 
 ## Graphical Layout
 
@@ -121,11 +122,12 @@ Spot The Double website is a game for kids or adults with a game section with tw
   w3cssvalidator.png
 
 - Lighthouse performance scoring
-  - Lighthouse performance scoring: Spot The Double
+
   ![Lighthouse performance scoring](https://github.com/nianswe/ci_project2/blob/main/media/lighthouse.png)
 
 - JShint validation
  - JShint validation replies two warnings about 'Functions declared within loops referencing an outer scoped variable may lead to confusing semantics.'
+
 ![JShint Warnings](https://github.com/nianswe/ci_project2/blob/main/media/jshint_warnings.png)
 
 ### Unfixed Bugs
@@ -142,17 +144,16 @@ The live link can be found here - https://nianswe.github.io/ci_project2/index.ht
 
 ## Credits 
 
-  - Countdown timer function with progress bar: 
+ - Countdown timer function with progress bar: 
     Inspiration and credit: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
     https://stackoverflow.com/users/4815264/james-mcdowell
 
-  - DOMContentLoaded, On-Click function, waiting for Click on image when image is choosen on upper or bottom card .
+ - DOMContentLoaded, On-Click function, waiting for Click on image when image is choosen on upper or bottom card .
     Inspiration and credit: Code Institute, Love Maths Project
     https://github.com/Code-Institute-Org/love-maths
 
 ### Content 
 
-- The images used is icons from [Font Awesome](https://fontawesome.com/)
-- Fonts on all pages are imported from [Google Fonts](https://fonts.googleapis.com/)
-- Favicon from [favicon.io](https://favicon.io/emoji-favicons/star/)
-
+ - The images used is icons from [Font Awesome](https://fontawesome.com/)
+ - Fonts on all pages are imported from [Google Fonts](https://fonts.googleapis.com/)
+ - Favicon from [favicon.io](https://favicon.io/emoji-favicons/star/)
