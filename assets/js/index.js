@@ -81,7 +81,7 @@ function newGame() {
 function runGame() { 
 	stopTimer();
 	startTimer();
-  hidetimeisUpInfo();
+  	hidetimeisUpInfo();
 	hideFinalScoreInfo();
 	hideRunGameButton();
 	
@@ -89,7 +89,7 @@ function runGame() {
     // Set a timeout...
     setTimeout(function () {
         // Hide the address bar!
-        window.scrollTo(0, 100);
+        window.scrollTo(0, 10);
     }, 0);
   });
 

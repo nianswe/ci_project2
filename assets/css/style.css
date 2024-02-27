@@ -6,6 +6,7 @@
     margin: 0;
     box-sizing: border-box;
 }	
+
 /* Heading */
 .heading {
 	text-align: center;
@@ -29,7 +30,6 @@
 /* Backgrund Div */
 .background {
 	width: 100%;
-    max-width: 1024px;
     height: 100%;
     display: flex;
 }
@@ -75,6 +75,9 @@
     display:flex;
     justify-content: space-evenly;
     width: 100vw;
+    max-width: 1024px;
+    margin-right: auto;
+    margin-left: auto;
     height:auto;
     background-color: white;
 }
@@ -285,6 +288,9 @@
     #finalScoreInfo,
     #timeisUpInfo {
         margin-left:21vw;
+    }
+    .info-box {
+    border-radius: 15px 15px;
     }
 }
 
