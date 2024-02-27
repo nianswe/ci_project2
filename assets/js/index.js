@@ -53,16 +53,17 @@ function shufOrgPositions() {
 	return orgPosition;
 }
 
-// Functions to get double image position random one on each card.
 // Positions on upper card
 let firstCardPos = ["pos1", "pos3", "pos5", "pos7", "pos9", "pos11", "pos13", "pos15", "pos17"];
-// Positions on upper card
+// Positions on lower card
 let secondCardPos = ["pos2", "pos4", "pos6", "pos8", "pos10", "pos12", "pos14", "pos16", "pos18"];
+
 // Function to get double image position on upper card
 function doublePos1() {
 	var doublePos1 = firstCardPos[(Math.floor(Math.random() * firstCardPos.length))];
 	return doublePos1;
 }
+
 // Function to get double image position on lower card
 function doublePos2() {
 	var doublePos2 = secondCardPos[(Math.floor(Math.random() * secondCardPos.length))];
@@ -71,33 +72,32 @@ function doublePos2() {
 
 // Function to start/restart game 
 function newGame() {
+  //Reset Score on score board
   resetScore();
+  // Stop/Reset timer if running
   stopTimer();
+  // Run function to continue game
   runGame();
-  
-  
 }
 
-// Function to continue game and get random new images on the two cards
+// Function to continue game and get new random images on the two cards
 function runGame() { 
-	stopTimer();
+	// Stop/Reset timer if running
+  stopTimer();
+  // Start Timer
 	startTimer();
-  	hidetimeisUpInfo();
+  // Hide TimeisUpInfo Window
+  hidetimeisUpInfo();
+  // Hide FinalScoreInfo Window
 	hideFinalScoreInfo();
+  // Hide RunGame Button 
 	hideRunGameButton();
-	
-  window.addEventListener("load", function () {
-    // Set a timeout...
-    setTimeout(function () {
-        // Hide the address bar!
-        window.scrollTo(0, 10);
-    }, 0);
-  });
 
-  // All shuffled images 18 of total 30
+// All shuffled images 18 of total 30
 	let images = shufAllImages();
-	// All shuffled positions on the two cards
-  let position = shufOrgPositions();
+
+// All shuffled positions on the two cards
+	let position = shufOrgPositions();
 	var pickedPos1 = [];
 	var pickedPos2 = [];
 	var pickedPos3 = [];
@@ -116,9 +116,11 @@ function runGame() {
 	var pickedPos16 = [];
 	var pickedPos17 = [];
 	var pickedPos18 = [];
+
 // Random positions for double image on the to cards
 	var doublePosition1 = doublePos1();
-	var doublePosition2 = doublePos2(); 
+	var doublePosition2 = doublePos2();
+
 // All shuffled images in own array
 	var pickedImg1 = [];
 	var pickedImg2 = [];
@@ -140,7 +142,7 @@ function runGame() {
 	var pickedImg18 = [];
 	var doubleImage = [];
 
-  // Each random position index in position array
+// Each random position index in position array
 	pickedPos1 = position[0]; 
 	pickedPos2 = position[1]; 
 	pickedPos3 = position[2]; 
@@ -160,8 +162,8 @@ function runGame() {
 	pickedPos17 = position[16]; 
 	pickedPos18  = position[17]; 
 
-  // Each random image index in images array	
-  	pickedImg1 = images[0]; 
+// Each random image index in images array	
+  pickedImg1 = images[0]; 
 	pickedImg2 = images[1]; 
 	pickedImg3 = images[2]; 
 	pickedImg4 = images[3]; 
@@ -202,34 +204,32 @@ function runGame() {
 	document.getElementById(pickedPos18).innerHTML = pickedImg18;
 	document.getElementById(doublePosition1).innerHTML = doubleImage;
 	document.getElementById(doublePosition2).innerHTML = doubleImage;
-	// Display correct Double Image in console at testing, out commented.
-  	//console.log("doubleImage",doubleImage);
 	
   // Get correct position for double image on upper card to get Id of image to validate with choosen image 
   correct1 = document.getElementById(doublePosition1);
-	correctImg1 = correct1.children[0];
+  correctImg1 = correct1.children[0];
 	onClickImg(correctImg1.id);
-	// Display correct Double Image in console at testing, out commented.
-  // console.log('correctImgId',correctImg1.id);
 	
   // Trigger On-Click function waiting for Click on image when image is choosen 
   onClickImg();
 }
- 
-// On-Click function waiting for Click on image when image is choosen on upper or bottom card .
+
+// On-Click function, waiting for Click on image when image is choosen on upper or bottom card .
 var picsClick;
 function onClickImg() {
 	picsClick = document.getElementsByTagName("i");
 		for( var x=0; x < picsClick.length; x++ ) {
 		  picsClick[x].onclick = function choice(){
 			  let choice = (""+this.id+"");
-			  // Display correct choosen Image in console, for testing, out commented.
-        console.log('choice', choice);
-			  // Display correct choosen Image in console, for testing, out commented.
-			  console.log('correctImg1', correctImg1.id);
+			  
+        // For testing only: Display correct choosen Image in console, for testing, out commented.
+        // console.log('choice', choice);
+			  
+        // For testing only: Display correct choosen Image in console, for testing, out commented.
+			  // console.log('correctImg1', correctImg1.id);
 			
-        // Validation to verify if correct image is choosen or not
-			    if (choice === correctImg1.id) {
+        //* Validation to verify if correct image is choosen or not
+            if (choice === correctImg1.id) {
 			      // Stop and reset Timer
             stopTimer();
 			      // Make Run Game button visuable if timer is inactivated 
@@ -243,10 +243,6 @@ function onClickImg() {
 			    } else {
 				    // Stop and reset Timer
             stopTimer();
-				    // Reset final Score value on Time is up Window and Final score window to 0
-            // document.getElementById("finalScore1").innerText = "0";
-            // document.getElementById("finalScore2").innerText = "0";
-            
 				    // Make Run Game button visuable
             showRunGameButton();
 				    // Reset Score value in Score section to 0
@@ -270,7 +266,6 @@ function onClickImg() {
 // Increment Score Function
 var currentScore;
 var finalScore;
-
 function incrementScore() {  
     // Get current score from score board
     currentScore = parseInt(document.getElementById("score").innerText);
@@ -286,7 +281,7 @@ function incrementScore() {
   document.getElementById("finalScore2").innerText = finalScore;
 }
 
-// Reset score on score board, Final score info Window, Time Is Up Window to 0
+// Reset score on score board function, Final score info Window, Time Is Up Window to 0
 function resetScore() {
 	currentScore = 0;
   finalScore = 0;
@@ -299,22 +294,27 @@ function resetScore() {
 function showFinalScoreInfo() {
 	document.getElementById("finalScoreInfo").style.display = "block";
 }
+
 // Show RunGameButton, hidden during ongoing game.
 function showRunGameButton() {
 	document.getElementById("newGame").style.visibility = 'visible';
 }
+
 // Hide FinalScoreInfo Window when game starts
 function hideFinalScoreInfo() {
 	document.getElementById("finalScoreInfo").style.display = "none";
 }
+
 // Hide RunGameButton when game starts
 function hideRunGameButton() {
 	document.getElementById("newGame").style.visibility = 'hidden';
 }
+
 // Show timeisUpInfo window, hidden during ongoing game.
 function timeisUpInfo() {
 	document.getElementById("timeisUpInfo").style.display = "block";
 }
+
 // Hide timeisUpInfo window when game starts
 function hidetimeisUpInfo() {
 	document.getElementById("timeisUpInfo").style.display = "none";
@@ -334,28 +334,24 @@ function startTimer() {
       showRunGameButton(); 
 		  // Show countdown seconds in span in Count-down div
       document.getElementById("seconds").innerHTML = timeleft;
-		  // Show timeisUpInfo window
-      
-      //Add final score to Time is up window
+		  //Add final score to Time is up window
       document.getElementById("finalScore2").innerText = "0";
       document.getElementById("finalScore2").innerText = finalScore;
       document.getElementById("correctImage2").innerText = correctImg1.id;
       // View Final Score Window with final score
       timeisUpInfo();
-      	    
       // Reset Score value in Score section to 0
       // resetScore();
       return startTimer;
-          
-      //Ongoing countdown
+    //Ongoing countdown
 		} else {
 				// Hide FinalScoreInfo window
       	hideFinalScoreInfo();
       	// Hide hidetimeisUpInfo window 
-		hidetimeisUpInfo();
+		    hidetimeisUpInfo();
       	// Hide hideRunGameButton
-		hideRunGameButton();
-  		//Update progress bar
+		    hideRunGameButton();
+  		  //Update progress bar
         document.getElementById("progressBar").value = 11 - timeleft;
         //Update countdown timer
   			document.getElementById("seconds").innerHTML = timeleft +"";
@@ -364,10 +360,7 @@ function startTimer() {
 	}, 1000);
 }
 
-
-
-
+// Stop and reset Coundown timer
 function stopTimer() {
 	clearInterval(coundownTimer);
-	
 }
