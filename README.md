@@ -1,6 +1,6 @@
 # Spot The Double
 
-Spot The Double website is a game for kids or adults with a game section with two cards of 9 pictures each. When you press the Run Game button, 9 random images appear on the two cards, one image on each card becomes a double. The challenge of the game is to find the double, click the picture on one of the cards before the countdown timer that starts at 20 seconds reaches 0. The timer starts when you press the Run Now button. When you succeed the score will increase by one point, if you fail the game is over and you can try again.
+Spot The Double website is a game for kids or adults with a game section with two cards of 9 pictures each. When you press the Run Game button, 9 random images appear on the two cards, one image on each card becomes a double. The challenge of the game is to find the double, click the picture on one of the cards before the countdown timer that starts at 20 seconds reaches 0. The timer starts when you press the Run Now button. When you succeed the score will increase by one point and the game will continue, if you fail the game is over and you can try again.
 
 ![Responsice Mockup](https://github.com/nianswe/ci_project2/blob/main/media/pickthedouble_mockup.png)
 
