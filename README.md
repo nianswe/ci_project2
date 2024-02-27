@@ -147,7 +147,8 @@ Spot The Double website is a game for kids or adults with a game section with tw
   ![Lighthouse performance scoring](https://github.com/nianswe/ci_project2/blob/main/media/lighthouse.png)
 
 - JShint validation
-  - JShint validation replies two warnings about 'Functions declared within loops referencing an outer scoped variable may lead to confusing semantics.'
+  - Replies no errors
+  - Replies two warnings: 'Functions declared within loops referencing an outer scoped variable may lead to confusing semantics.'
 
 ![JShint Warnings](https://github.com/nianswe/ci_project2/blob/main/media/jshint_warnings.png)
 
