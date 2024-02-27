@@ -1,11 +1,6 @@
 # Spot The Double
 
-Spot The Double website, website is a game for kids or adults with a game section with two cards with 9 images each.
-When you press the Run Game button 9 random images will show on the two cards, one image on each card will be a double.
-The challenge in the game is to spot the double, click on image on one of the cards before the count down timer reach 0.
-The timer starts when you press the Run Now button.
-When you success the score will increas with one point, if you fail the game is over, and you can try again.
-
+Spot The Double website is a game for kids or adults with a game section with two cards of 9 pictures each. When you press the Run Game button, 9 random images appear on the two cards, one image on each card becomes a double. The challenge of the game is to find the double, click the picture on one of the cards before the countdown timer that starts at 20 seconds reaches 0. The timer starts when you press the Run Now button. When you succeed the score will increase by one point, if you fail the game is over and you can try again.
 
 ![Responsice Mockup](https://github.com/nianswe/ci_project2/blob/main/media/pickthedouble_mockup.png)
 
@@ -15,7 +10,7 @@ When you success the score will increas with one point, if you fail the game is 
 
 - __Header__
 
-  - Header with logo and text sting
+  - Header with logo and text string
   - Ability to add a menu to choose settings in future feature updates.
 
 ![Header](https://github.com/nianswe/ci_project2/blob/main/media/header.png)
@@ -33,32 +28,32 @@ When you success the score will increas with one point, if you fail the game is 
 
 - __Popup/Alert messages when correct answer__
 
-  - When game is running and correct double image are choosen a popup/alert message will show, saying Correct answer.
-  - When you close the message on OK two new cards with images will show and the game continues.
+  - When the game runs and the correct double image is selected, a popup/warning message will appear saying Correct Answer.
+  - When you close the message on OK, two new cards with pictures will appear and the game will continue.
   - The score will increase with one. 
 
 ![Correct Answer](https://github.com/nianswe/ci_project2/blob/main/media/correctanswer.png)  
 
 - __Popup/Alert messages when wrong answer__
 
-  - When game is running and wrong double image are choosen a popup/alert message will show, saying Wrong answer, and information about the image you choose, and the correct image.
-   - When you close the message on OK, a game over window show and the game is over.
+  - When the game runs and the wrong double image is selected, a popup message will appear saying Wrong Answer, and information about the image you selected and the correct image.
+  - When you close the message on OK, a game over window appears and the game is over.
 
 ![Wrong Answer](https://github.com/nianswe/ci_project2/blob/main/media/wronganswer.png)
 
 - __Game Over Window__
 
- - The Game Over window will show when you close the wrong answer popup message.
- - It give you the information the game is over and show your score and the correct image you should have choosen.
- - On two buttons you can choose to Run a new game or Quit the game, and the start page will show.  
+ - The Game Over window appears when you close the popup message.
+ - It gives you the information that the game is over and shows your score and the correct image you should have chosen.
+ - On two buttons, you can choose to run a new game or exit the game, then the home page will appear.
 
 ![Game Over](https://github.com/nianswe/ci_project2/blob/main/media/gameover.png)
 
 - __Time Is Up__
 
- - The Time Is Up window will show when you do not choose an image before the timer has reached 0.
- - It gives you the information the game is over and show your score and the correct image you should have choosen.
- - On two buttons you can choose to Run a new game or Quit the game, and the start page will show.  
+ - The Time Is Up window appears when you do not select an image before the timer reaches 0.
+ - It gives you the information that the game is over and shows your score and the correct image you should have chosen.
+ - On two buttons, you can choose to run a new game or exit the game, then the home page will appear. 
 
 ![Time is up](https://github.com/nianswe/ci_project2/blob/main/media/timeisup.png)
 
@@ -78,17 +73,17 @@ When you success the score will increas with one point, if you fail the game is 
  
 ![Score](https://github.com/nianswe/ci_project2/blob/main/media/score.png)
 
-
 -__Random images to 9 positions on 2 cards__
  - Array (allImages) with 30 images/icons from FontAwesome in format:
        < i id = image class = fa-solid fa-image >< /i >.
  - Shuffle the images in array with function: shufAllImages.
  - Array (orgPosition) with all positions on the two cards [pos1 - pos18], odd on card1 (upper), even on card2 (botton).
  - Shuffle the positions in array with function: shufOrgPositions.
- - Functions doublePos1 and doublePos1 generate 2 ranom positions for double one on each card.
- - RunGame function place each random image in each random position in div in card.
- - RunGame function also gets correct position for double image on upper card to get Id of image to validate with choosen image.
- - At validation in function onClickImg, id of choosen image compairs with id of correct double image. 
+ - Functions doublePos1 and doublePos2 generate 2 random positions for double, one on each card.
+ - RunGame function place each random image in each random position in div in card in HTLM.
+ - RunGame function also gets correct position for double image on upper card to get Id of image to validate with Id on choosen image.
+ - At validation in function onClickImg, Id of choosen image compairs with Id of correct double image.
+ - If TRUE, game will coninue with two new card, if FALSE, game vill end with ability run a new game.
 
 ### Future Possible Features
  - Menu in header with settings.
@@ -96,13 +91,11 @@ When you success the score will increas with one point, if you fail the game is 
  - Different characters, images, colours, letters, numbers.
  - Name registration and high score list
 
-
 ## Graphical Layout
 
 -__Wireframe__
 
 ![Wireframe](https://github.com/nianswe/ci_project2/blob/main/media/wireframe.png)
-
 
 ## Testing 
 
@@ -115,7 +108,6 @@ When you success the score will increas with one point, if you fail the game is 
   
 - __Verified scoreboard__
    - Verified points, increase with one on successful selection and reset when game restarts and ends.
-
 
 ### Validator Testing 
 
