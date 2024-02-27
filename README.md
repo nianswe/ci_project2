@@ -6,7 +6,7 @@ The challenge in the game is to spot the double, click on image on one of the ca
 The timer starts when you press the Run Now! button.
 When you success the score will increas with one point.
 
-![Responsice Mockup](https://github.com/nianswe/ci_project1/blob/main/media/the_treetop_bungalows_mockup.png)
+![Responsice Mockup](https://github.com/nianswe/ci_project2/blob/main/media/pickthedouble_mockup.png)
 
 ## Features 
 
@@ -48,14 +48,14 @@ When you success the score will increas with one point.
   - When game is running and wrong double image are choosen a popup/alert message will show, saying Wrong answer, and information about the image you choose, and the correct image.
    - When you close the message on OK, a game over window show and the game is over.
 
-![Game Over](https://github.com/nianswe/ci_project1/blob/main/media/gameover.png)
+![Game Over](https://github.com/nianswe/ci_project2/blob/main/media/gameover.png)
 - __Game Over Window__
 
  - The Game Over window will show when you close the wrong answer popup message.
  - It give you the information the game is over and show your score and the correct image you should have choosen.
  - On two buttons you can choose to Run a new game or Quit the game, and the start page will show.  
 
-![Time is up](https://github.com/nianswe/ci_project1/blob/main/media/timeisup.png)
+![Time is up](https://github.com/nianswe/ci_project2/blob/main/media/timeisup.png)
 - __Time Is Up__
 
  - The Time Is Up window will show when you do not choose a image before the timer has reached 0.
@@ -78,11 +78,11 @@ All links in the navigation menu and toogle are tested and verified.
 
 - HTML
   - No errors were returned when passing through the official
-  ![W3C Validator index.html](https://github.com/nianswe/ci_project1/blob/main/media/w3_val.png)
+  ![W3C Validator index.html](https://github.com/nianswe/ci_project2/blob/main/media/w3_val.png)
   
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fnianswe.github.io%2Fci_project2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-  ![W3C CSS Validator style.css](https://github.com/nianswe/ci_project2/blob/main/media/w3cssvalidator.png)
+  ![W3C CSS Validator style.css](https://github.com/nianswe/ci_project2/blob/main/media/w3cssval.png)
   w3cssvalidator.png
 
 - Lighthouse performance scoring
@@ -91,7 +91,7 @@ All links in the navigation menu and toogle are tested and verified.
 
 - JShint validation
  - JShint validation replies two warnings about 'Functions declared within loops referencing an outer scoped variable may lead to confusing semantics.'
-![Jshint Warnings](https://github.com/nianswe/ci_project1/blob/main/media/jshint_warnings.png)
+![Jshint Warnings](https://github.com/nianswe/ci_project2/blob/main/media/jshint_warnings.png)
 
 ### Unfixed Bugs
 
