@@ -64,7 +64,7 @@ let firstCardPos = ["pos1", "pos3", "pos5", "pos7", "pos9", "pos11", "pos13", "p
 // Positions on lower card, id of div in table (game-section2)
 let secondCardPos = ["pos2", "pos4", "pos6", "pos8", "pos10", "pos12", "pos14", "pos16", "pos18"];
 
-// Function to get double image position on upper card
+// Functions to get double image position on upper card
 function doublePos1() {
 	var doublePos1 = firstCardPos[(Math.floor(Math.random() * firstCardPos.length))];
 	return doublePos1;

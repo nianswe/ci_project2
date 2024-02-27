@@ -64,40 +64,59 @@ When you success the score will increas with one point, if you fail the game is 
 
 - __Countdown timer__
 
- - 
- - Count down timer function with progress bar 
+  - Count down timer function with progress bar 
    Insperation and credit: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
    https://stackoverflow.com/users/4815264/james-mcdowell
 
 ![Timer](https://github.com/nianswe/ci_project2/blob/main/media/timer.png)
 
 - __Run Now Button__
- - 
+ 
  ![Run Now Button](https://github.com/nianswe/ci_project2/blob/main/media/runnow.png)
 
 - __Score Board__
- - 
-
+ 
 ![Score](https://github.com/nianswe/ci_project2/blob/main/media/score.png)
 
 
 -__Random images to 9 positions on 2 cards__
  - Array (allImages) with 30 images/icons from FontAwesome in format:
-       < i id = image class = fa-solid fa-image >< /i >
- - Shuffle the images in array with function: shufAllImages
- - Array (orgPosition) with all positions on the two cards [pos1 - pos18], odd on card1 (upper), even on card2 (botton)
- - Shuffle the positions in array with function: shufOrgPositions
- 
+       < i id = image class = fa-solid fa-image >< /i >.
+ - Shuffle the images in array with function: shufAllImages.
+ - Array (orgPosition) with all positions on the two cards [pos1 - pos18], odd on card1 (upper), even on card2 (botton).
+ - Shuffle the positions in array with function: shufOrgPositions.
+ - Functions doublePos1 and doublePos1 generate 2 ranom positions for double one on each card.
+ - RunGame function place each random image in each random position in div in card.
+ - RunGame function also gets correct position for double image on upper card to get Id of image to validate with choosen image.
+ - At validation in function onClickImg, id of choosen image compairs with id of correct double image. 
+
+### Future Possible Features
+ - Menu in header with settings.
+ - Different skill levels, 20, 10, 5 seconds countdown timer.
+ - Different characters, images, colours, letters, numbers.
+ - Name registration and high score list
 
 
+## Graphical Layout
 
+-__Wireframe__
+
+![Wireframe](https://github.com/nianswe/ci_project2/blob/main/media/wireframe.png)
 
 
 ## Testing 
 
-All links in the navigation menu and toogle are tested and verified.
+### Manual Testing
+- __Verified Images__
+   - Verified so that all images are unique on both cards except for correct duplicates on each card.
 
+- __Verified Countdown Timer__
+   - Verified so that the timer starts, stops and resets when the game starts, restarts and ends.
   
+- __Verified scoreboard__
+   - Verified points, increase with one on successful selection and reset when game restarts and ends.
+
+
 ### Validator Testing 
 
 - HTML
@@ -115,7 +134,7 @@ All links in the navigation menu and toogle are tested and verified.
 
 - JShint validation
  - JShint validation replies two warnings about 'Functions declared within loops referencing an outer scoped variable may lead to confusing semantics.'
-![Jshint Warnings](https://github.com/nianswe/ci_project2/blob/main/media/jshint_warnings.png)
+![JShint Warnings](https://github.com/nianswe/ci_project2/blob/main/media/jshint_warnings.png)
 
 ### Unfixed Bugs
 
@@ -131,20 +150,17 @@ The live link can be found here - https://nianswe.github.io/ci_project2/index.ht
 
 ## Credits 
 
-  - Count down timer function with progress bar: 
-    Insperation and credit: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
+  - Countdown timer function with progress bar: 
+    Inspiration and credit: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
     https://stackoverflow.com/users/4815264/james-mcdowell
 
   - DOMContentLoaded, On-Click function, waiting for Click on image when image is choosen on upper or bottom card .
-    Insperation and credit: Code Institute, Love Maths Project
+    Inspiration and credit: Code Institute, Love Maths Project
     https://github.com/Code-Institute-Org/love-maths
 
 ### Content 
 
 - The images used is icons from [Font Awesome](https://fontawesome.com/)
 - Fonts on all pages are imported from [Google Fonts](https://fonts.googleapis.com/)
+- Favicon from [favicon.io](https://favicon.io/emoji-favicons/star/)
 
-### Media
-
-- Insperation and code:
-  
