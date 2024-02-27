@@ -82,11 +82,10 @@ Spot The Double website is a game for kids or adults with a game section with tw
 ![Score](https://github.com/nianswe/ci_project2/blob/main/media/score.png)
 
 
-- __Random images to 9 positions on 2 cards__
- - Description of the steps
+- __Random images to 9 positions on 2 cards, Description of the steps__
   - Array (allImages) with 30 images/icons from FontAwesome in format:
        < i id = image class = fa-solid fa-image >< /i >.
-  - Shuffle the images in array with function: shufAllImages.
+  Shuffle the images in array with function: shufAllImages.
   - Array (orgPosition) with all positions on the two cards [pos1 - pos18], odd on card1 (upper), even on card2 (botton).
   - Shuffle the positions in array with function: shufOrgPositions.
   - Functions doublePos1 and doublePos2 generate 2 random positions for double, one on each card.
@@ -97,7 +96,7 @@ Spot The Double website is a game for kids or adults with a game section with tw
 
 
 ### Future Possible Features
- - Menu in header with settings.
+- __Menu in header with settings__.
   - Different skill levels, 20, 10, 5 seconds countdown timer.
   - Different characters, images, colours, letters, numbers.
   - Name registration and high score list
@@ -111,8 +110,8 @@ Spot The Double website is a game for kids or adults with a game section with tw
  
 
 - __Final Score Info and Time Is Up Info Windows__
- - The divs in HTML for this windows are hidden from start.
- - The following functions show and hide the windows
+  - The divs in HTML for this windows are hidden from start.
+  - The following functions show and hide the windows
   - showFinalScoreInfo will show Final Score Info Window
   - hideFinalScoreInfo will hide Final Score Info Window
   - showtimeisUpInfo will show Time Is Up Info Window
