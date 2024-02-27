@@ -15,6 +15,7 @@ Spot The Double website is a game for kids or adults with a game section with tw
 
 ![Header](https://github.com/nianswe/ci_project2/blob/main/media/header.png)
 
+
 - __Game Area__
 
   - The gaming area consists of two card sections devided by one information section, on the top it is a progress bar.
@@ -26,6 +27,7 @@ Spot The Double website is a game for kids or adults with a game section with tw
 ![Game Area1](https://github.com/nianswe/ci_project2/blob/main/media/gamearea1.png)
 ![Game Area2](https://github.com/nianswe/ci_project2/blob/main/media/gamearea2.png)
 
+
 - __Popup messages when correct answer__
 
   - When the game runs and the correct double image is selected, a popup message will appear saying Correct Answer.
@@ -34,12 +36,14 @@ Spot The Double website is a game for kids or adults with a game section with tw
 
 ![Correct Answer](https://github.com/nianswe/ci_project2/blob/main/media/correctanswer.png)  
 
+
 - __Popup messages when wrong answer__
 
   - When the game runs and the wrong double image is selected, a popup message will appear saying Wrong Answer, and information about the image you selected and the correct image.
   - When you close the message on OK, a game over window appears and the game is over.
 
 ![Wrong Answer](https://github.com/nianswe/ci_project2/blob/main/media/wronganswer.png)
+
 
 - __Game Over Window__
 
@@ -49,6 +53,7 @@ Spot The Double website is a game for kids or adults with a game section with tw
 
 ![Game Over](https://github.com/nianswe/ci_project2/blob/main/media/gameover.png)
 
+
 - __Time Is Up__
 
   - The Time Is Up window appears when you do not select an image before the timer reaches 0.
@@ -56,6 +61,7 @@ Spot The Double website is a game for kids or adults with a game section with tw
   - On two buttons, you can choose to run a new game or exit the game, then the home page will appear. 
 
 ![Time is up](https://github.com/nianswe/ci_project2/blob/main/media/timeisup.png)
+
 
 - __Countdown timer__
 
@@ -65,15 +71,18 @@ Spot The Double website is a game for kids or adults with a game section with tw
 
 ![Timer](https://github.com/nianswe/ci_project2/blob/main/media/timer.png)
 
+
 - __Run Now Button__
  
  ![Run Now Button](https://github.com/nianswe/ci_project2/blob/main/media/runnow.png)
+
 
 - __Score Board__
  
 ![Score](https://github.com/nianswe/ci_project2/blob/main/media/score.png)
 
--__Random images to 9 positions on 2 cards__
+
+- __Random images to 9 positions on 2 cards__
  - Description of the steps
   - Array (allImages) with 30 images/icons from FontAwesome in format:
        < i id = image class = fa-solid fa-image >< /i >.
@@ -86,25 +95,29 @@ Spot The Double website is a game for kids or adults with a game section with tw
   - At validation in function onClickImg, Id of choosen image compairs with Id of correct double image.
   - If TRUE, game will coninue with two new card, if FALSE, game vill end with ability run a new game.
 
+
 ### Future Possible Features
  - Menu in header with settings.
   - Different skill levels, 20, 10, 5 seconds countdown timer.
   - Different characters, images, colours, letters, numbers.
   - Name registration and high score list
 
+
 ## Graphical Layout
 
--__Wireframe__
+- __Wireframe__
 
 ![Wireframe](https://github.com/nianswe/ci_project2/blob/main/media/wireframe.png)
+ 
 
--__Final Score Info and Time Is Up Info Windows__
+- __Final Score Info and Time Is Up Info Windows__
  - The divs in HTML for this windows are hidden from start.
  - The following functions show and hide the windows
   - showFinalScoreInfo will show Final Score Info Window
   - hideFinalScoreInfo will hide Final Score Info Window
   - showtimeisUpInfo will show Time Is Up Info Window
   - hidetimeisUpInfo will hide Time Is Up Info Window
+
 
 ## Testing 
 
@@ -117,6 +130,7 @@ Spot The Double website is a game for kids or adults with a game section with tw
   
 - __Verified scoreboard__
    - Verified points, increase with one on successful selection and reset when game restarts and ends.
+
 
 ### Validator Testing 
 
@@ -138,9 +152,11 @@ Spot The Double website is a game for kids or adults with a game section with tw
 
 ![JShint Warnings](https://github.com/nianswe/ci_project2/blob/main/media/jshint_warnings.png)
 
+
 ### Unfixed Bugs
 
 No known bugs.
+
 
 ## Deployment
 
@@ -149,6 +165,7 @@ I created a new public GitHub repository 'nianswe/ci_project2', using 'Code-Inst
 I created a local git repository using 'git init' and added it to the staging area with 'git add .', I committed to the local repository using 'git commit -m 'message' and pushed to the remote repository at GitHub with 'git push'.
 
 The live link can be found here - https://nianswe.github.io/ci_project2/index.html 
+
 
 ## Credits 
 
@@ -159,6 +176,7 @@ The live link can be found here - https://nianswe.github.io/ci_project2/index.ht
  - DOMContentLoaded, On-Click function, waiting for Click on image when image is choosen on upper or bottom card .
     Inspiration and credit: Code Institute, Love Maths Project
     https://github.com/Code-Institute-Org/love-maths
+
 
 ### Content 
 
