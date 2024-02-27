@@ -1,6 +1,12 @@
-/*jshint esversion: 6 */
-// Wait for the DOM to finish loading before running the game
-// Get the button elements and add event listeners to them
+/**
+ * Wait for the DOM to finish loading before running the game
+ * Get the button elements and add event listeners to them
+ * 
+ *    DOMContentLoaded, On-Click function, waiting for Click on buttons Run Game in info section, or Run Game or Quit Game in FinalScoreInfo and TimeisUpInfo windows.
+ *    Insperation and credit: Code Institute, Love Maths Project
+ *    https://github.com/Code-Institute-Org/love-maths
+ * 
+ */
 document.addEventListener("DOMContentLoaded", function() {
 let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
@@ -53,9 +59,9 @@ function shufOrgPositions() {
 	return orgPosition;
 }
 
-// Positions on upper card
+// Positions on upper card, id of div in table (game-section1)
 let firstCardPos = ["pos1", "pos3", "pos5", "pos7", "pos9", "pos11", "pos13", "pos15", "pos17"];
-// Positions on lower card
+// Positions on lower card, id of div in table (game-section2)
 let secondCardPos = ["pos2", "pos4", "pos6", "pos8", "pos10", "pos12", "pos14", "pos16", "pos18"];
 
 // Function to get double image position on upper card
@@ -117,7 +123,7 @@ function runGame() {
 	var pickedPos17 = [];
 	var pickedPos18 = [];
 
-// Random positions for double image on the to cards
+// Random positions for double image on the to two cards
 	var doublePosition1 = doublePos1();
 	var doublePosition2 = doublePos2();
 
@@ -214,21 +220,19 @@ function runGame() {
   onClickImg();
 }
 
-// On-Click function, waiting for Click on image when image is choosen on upper or bottom card .
+/**
+ * On-Click function, waiting for Click on image when image is choosen on upper or bottom card .
+ *    Insperation and credit: Code Institute, Love Maths Project
+ *    https://github.com/Code-Institute-Org/love-maths
+ * 
+ */
 var picsClick;
 function onClickImg() {
 	picsClick = document.getElementsByTagName("i");
 		for( var x=0; x < picsClick.length; x++ ) {
 		  picsClick[x].onclick = function choice(){
 			  let choice = (""+this.id+"");
-			  
-        // For testing only: Display correct choosen Image in console, for testing, out commented.
-        // console.log('choice', choice);
-			  
-        // For testing only: Display correct choosen Image in console, for testing, out commented.
-			  // console.log('correctImg1', correctImg1.id);
-			
-        //* Validation to verify if correct image is choosen or not
+			      // Validation to verify if correct image is choosen or not
             if (choice === correctImg1.id) {
 			      // Stop and reset Timer
             stopTimer();
@@ -320,7 +324,13 @@ function hidetimeisUpInfo() {
 	document.getElementById("timeisUpInfo").style.display = "none";
 }
 
-// Count down timer Function
+/**
+ * Count down timer function with progress bar 
+ *    Insperation and credit: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
+ *    https://stackoverflow.com/users/4815264/james-mcdowell 
+ *    
+ */
+ 
 var	coundownTimer;
 function startTimer() {
 	// Count down amount of seconds

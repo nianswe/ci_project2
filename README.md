@@ -1,27 +1,23 @@
 # Spot The Double
 
-Spot The Double website, website is a game for kids or adults with a bame section with two cards with 9 images each.
-When you press the Run Game! button 9 random images will show on the two cards, one image on each card will be a double.
-The challenge in the game is to spot the double, click on image on one of the cards befor the count down timer reach 0.
-The timer starts when you press the Run Now! button.
-When you success the score will increas with one point.
+Spot The Double website, website is a game for kids or adults with a game section with two cards with 9 images each.
+When you press the Run Game button 9 random images will show on the two cards, one image on each card will be a double.
+The challenge in the game is to spot the double, click on image on one of the cards before the count down timer reach 0.
+The timer starts when you press the Run Now button.
+When you success the score will increas with one point, if you fail the game is over, and you can try again.
+
 
 ![Responsice Mockup](https://github.com/nianswe/ci_project2/blob/main/media/pickthedouble_mockup.png)
 
 ## Features 
 
-- 
-- 
-- 
-- 
-
 ### Existing Features
-
 
 - __Header__
 
   - Header with logo and text sting
-  - Possibillity to add a menu to choose settings in future feature updates.
+  - Ability to add a menu to choose settings in future feature updates.
+
 ![Header](https://github.com/nianswe/ci_project2/blob/main/media/header.png)
 
 - __Game Area__
@@ -31,10 +27,9 @@ When you success the score will increas with one point.
   - The two card sections consists of a round card, with 9 random images and one on each card is a double.
   When the game starts all images are stars.
   - The progress bar starts moves in 10 steps counting down from 10 seconds. 
+
 ![Game Area1](https://github.com/nianswe/ci_project2/blob/main/media/gamearea1.png)
 ![Game Area2](https://github.com/nianswe/ci_project2/blob/main/media/gamearea2.png)
-
-
 
 - __Popup/Alert messages when correct answer__
 
@@ -44,15 +39,12 @@ When you success the score will increas with one point.
 
 ![Correct Answer](https://github.com/nianswe/ci_project2/blob/main/media/correctanswer.png)  
 
-
 - __Popup/Alert messages when wrong answer__
 
   - When game is running and wrong double image are choosen a popup/alert message will show, saying Wrong answer, and information about the image you choose, and the correct image.
    - When you close the message on OK, a game over window show and the game is over.
 
 ![Wrong Answer](https://github.com/nianswe/ci_project2/blob/main/media/wronganswer.png)
-
-
 
 - __Game Over Window__
 
@@ -62,29 +54,44 @@ When you success the score will increas with one point.
 
 ![Game Over](https://github.com/nianswe/ci_project2/blob/main/media/gameover.png)
 
-
 - __Time Is Up__
 
- - The Time Is Up window will show when you do not choose a image before the timer has reached 0.
- - It give you the information the game is over and show your score and the correct image you should have choosen.
+ - The Time Is Up window will show when you do not choose an image before the timer has reached 0.
+ - It gives you the information the game is over and show your score and the correct image you should have choosen.
  - On two buttons you can choose to Run a new game or Quit the game, and the start page will show.  
 
 ![Time is up](https://github.com/nianswe/ci_project2/blob/main/media/timeisup.png)
 
 - __Countdown timer__
 
- - x
+ - 
+ - Count down timer function with progress bar 
+   Insperation and credit: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
+   https://stackoverflow.com/users/4815264/james-mcdowell
 
 ![Timer](https://github.com/nianswe/ci_project2/blob/main/media/timer.png)
 
 - __Run Now Button__
- - x
+ - 
  ![Run Now Button](https://github.com/nianswe/ci_project2/blob/main/media/runnow.png)
 
 - __Score Board__
- - x
+ - 
 
 ![Score](https://github.com/nianswe/ci_project2/blob/main/media/score.png)
+
+
+-__Random images to 9 positions on 2 cards__
+ - Array (allImages) with 30 images/icons from FontAwesome in format:
+       < i id = image class = fa-solid fa-image >< /i >
+ - Shuffle the images in array with function: shufAllImages
+ - Array (orgPosition) with all positions on the two cards [pos1 - pos18], odd on card1 (upper), even on card2 (botton)
+ - Shuffle the positions in array with function: shufOrgPositions
+ 
+
+
+
+
 
 ## Testing 
 
@@ -123,6 +130,14 @@ I created a local git repository using 'git init' and added it to the staging ar
 The live link can be found here - https://nianswe.github.io/ci_project2/index.html 
 
 ## Credits 
+
+  - Count down timer function with progress bar: 
+    Insperation and credit: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown
+    https://stackoverflow.com/users/4815264/james-mcdowell
+
+  - DOMContentLoaded, On-Click function, waiting for Click on image when image is choosen on upper or bottom card .
+    Insperation and credit: Code Institute, Love Maths Project
+    https://github.com/Code-Institute-Org/love-maths
 
 ### Content 
 
