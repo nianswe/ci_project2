@@ -73,18 +73,25 @@ function newGame() {
   resetScore();
   stopTimer();
   runGame();
+  
+  
 }
 
 // Function to continue game and get random new images on the two cards
 function runGame() { 
 	stopTimer();
 	startTimer();
-	hidetimeisUpInfo();
+  hidetimeisUpInfo();
 	hideFinalScoreInfo();
 	hideRunGameButton();
 	
-
-
+  window.addEventListener("load", function () {
+    // Set a timeout...
+    setTimeout(function () {
+        // Hide the address bar!
+        window.scrollTo(0, 100);
+    }, 0);
+  });
 
   // All shuffled images 18 of total 30
 	let images = shufAllImages();
@@ -249,7 +256,7 @@ function onClickImg() {
             console.log(correctImg1.id);
 				    // View Final Score Window with final score
             showFinalScoreInfo();
-				    // Reset Score value in Score section to 0
+            // Reset Score value in Score section to 0
             // resetScore();
 				    return startTimer;
 			    }
@@ -311,7 +318,8 @@ function timeisUpInfo() {
 // Hide timeisUpInfo window when game starts
 function hidetimeisUpInfo() {
 	document.getElementById("timeisUpInfo").style.display = "none";
-};
+}
+
 // Count down timer Function
 var	coundownTimer;
 function startTimer() {
@@ -334,19 +342,20 @@ function startTimer() {
       document.getElementById("correctImage2").innerText = correctImg1.id;
       // View Final Score Window with final score
       timeisUpInfo();
+      	    
       // Reset Score value in Score section to 0
       // resetScore();
       return startTimer;
           
       //Ongoing countdown
 		} else {
-      // Hide FinalScoreInfo window
-      hideFinalScoreInfo();
-      // Hide hidetimeisUpInfo window 
-			hidetimeisUpInfo();
-      // Hide hideRunGameButton
-			hideRunGameButton();
-  			//Update progress bar
+				// Hide FinalScoreInfo window
+      	hideFinalScoreInfo();
+      	// Hide hidetimeisUpInfo window 
+		hidetimeisUpInfo();
+      	// Hide hideRunGameButton
+		hideRunGameButton();
+  		//Update progress bar
         document.getElementById("progressBar").value = 11 - timeleft;
         //Update countdown timer
   			document.getElementById("seconds").innerHTML = timeleft +"";
@@ -354,6 +363,9 @@ function startTimer() {
 		}
 	}, 1000);
 }
+
+
+
 
 function stopTimer() {
 	clearInterval(coundownTimer);

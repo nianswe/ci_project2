@@ -10,6 +10,8 @@
 .heading {
 	text-align: center;
     max-height: 90px;
+    display:block;
+    
 } 
 /* Logo */
 .logo {
