@@ -1,9 +1,10 @@
+/*jshint esversion: 6 */
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
 let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function whenClick() {
             if (this.getAttribute("data-type") === "newGame") {
 			// StartTimer()
       newGame();
@@ -12,7 +13,7 @@ let buttons = document.getElementsByTagName("button");
 				location.reload();
 			}	
 		});
-	};
+	}
 });
 
 // Variable for Correct chosen div/cell card1 for validation if correct image is picked
@@ -60,12 +61,12 @@ let secondCardPos = ["pos2", "pos4", "pos6", "pos8", "pos10", "pos12", "pos14", 
 // Function to get double image position on upper card
 function doublePos1() {
 	var doublePos1 = firstCardPos[(Math.floor(Math.random() * firstCardPos.length))];
-	return doublePos1
+	return doublePos1;
 }
 // Function to get double image position on lower card
 function doublePos2() {
 	var doublePos2 = secondCardPos[(Math.floor(Math.random() * secondCardPos.length))];
-	return doublePos2
+	return doublePos2;
 }
 
 // Function to start/restart game 
@@ -137,6 +138,7 @@ function runGame() {
 	var pickedImg16 = [];
 	var pickedImg17 = [];
 	var pickedImg18 = [];
+	var doubleImage = [];
 
   // Each random position index in position array
 	pickedPos1 = position[0]; 
@@ -159,7 +161,7 @@ function runGame() {
 	pickedPos18  = position[17]; 
 
   // Each random image index in images array	
-  pickedImg1 = images[0]; 
+  	pickedImg1 = images[0]; 
 	pickedImg2 = images[1]; 
 	pickedImg3 = images[2]; 
 	pickedImg4 = images[3]; 
@@ -201,7 +203,7 @@ function runGame() {
 	document.getElementById(doublePosition1).innerHTML = doubleImage;
 	document.getElementById(doublePosition2).innerHTML = doubleImage;
 	// Display correct Double Image in console at testing, out commented.
-  console.log("doubleImage",doubleImage);
+  	//console.log("doubleImage",doubleImage);
 	
   // Get correct position for double image on upper card to get Id of image to validate with choosen image 
   correct1 = document.getElementById(doublePosition1);
@@ -215,10 +217,11 @@ function runGame() {
 }
  
 // On-Click function waiting for Click on image when image is choosen on upper or bottom card .
+var picsClick;
 function onClickImg() {
 	picsClick = document.getElementsByTagName("i");
 		for( var x=0; x < picsClick.length; x++ ) {
-		  picsClick[x].onclick = function(){
+		  picsClick[x].onclick = function choice(){
 			  let choice = (""+this.id+"");
 			  // Display correct choosen Image in console, for testing, out commented.
         console.log('choice', choice);
@@ -230,7 +233,7 @@ function onClickImg() {
 			      // Stop and reset Timer
             stopTimer();
 			      // Make Run Game button visuable if timer is inactivated 
-            showRunGameButton()
+            showRunGameButton();
 				    // Pop-up window Informing Correct Answer
             alert("     CORRECT ANSWER!     \nYou picked the:\n     "+this.id+"     \nCorrect image is the:\n     "+correctImg1.id);
 				    // Trigger funktion to increase score by 1 in score section 
@@ -245,7 +248,7 @@ function onClickImg() {
             // document.getElementById("finalScore2").innerText = "0";
             
 				    // Make Run Game button visuable
-            showRunGameButton()
+            showRunGameButton();
 				    // Reset Score value in Score section to 0
             document.getElementById("score").innerText = "0";
 				    // Pop-up window Informing Incorrect Answer, innalScore2form choosen image and correct image
@@ -260,13 +263,14 @@ function onClickImg() {
             // resetScore();
 				    return startTimer;
 			    }
-      }  
+      };  
     }
 }
 
 // Increment Score Function
 var currentScore;
 var finalScore;
+
 function incrementScore() {  
     // Get current score from score board
     currentScore = parseInt(document.getElementById("score").innerText);
@@ -280,10 +284,6 @@ function incrementScore() {
 	document.getElementById("finalScore1").innerText = finalScore;
 	// Set Final score value to Time Is Up Window.
   document.getElementById("finalScore2").innerText = finalScore;
-console.log(finalScore1);
-console.log(finalScore2);
-
-
 }
 
 // Reset score on score board, Final score info Window, Time Is Up Window to 0
