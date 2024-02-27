@@ -140,8 +140,7 @@ Spot The Double website is a game for kids or adults with a game section with tw
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fnianswe.github.io%2Fci_project2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   ![W3C CSS Validator style.css](https://github.com/nianswe/ci_project2/blob/main/media/w3cssval.png)
-  w3cssvalidator.png
-
+  
 - Lighthouse performance scoring
 
   ![Lighthouse performance scoring](https://github.com/nianswe/ci_project2/blob/main/media/lighthouse.png)
