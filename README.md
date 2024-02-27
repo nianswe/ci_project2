@@ -107,6 +107,7 @@ Spot The Double website is a game for kids or adults with a game section with tw
 - __Wireframe__
 
 ![Wireframe](https://github.com/nianswe/ci_project2/blob/main/media/wireframe.png)
+![Wireframe](https://github.com/nianswe/ci_project2/blob/main/media/wireframe_i.png)
  
 
 - __Final Score Info and Time Is Up Info Windows__
