@@ -12,7 +12,6 @@
 	text-align: center;
     max-height: 90px;
     display:block;
-    
 } 
 /* Logo */
 .logo {
@@ -104,7 +103,6 @@
     margin-left: 5vw;
     background-color: rgba(9, 9, 9, 0.9);
     text-align: center;
-
 }
 /* Final Score p elements */
 #finalScoreInfo p,
@@ -115,13 +113,11 @@
     font-size: 150%;
     color: whitesmoke;
 }
-
 /* Correct image info in finalScoreInfo and timeisUpInfo */
 #correctImage1,
 #correctImage2 {
     font-weight: bold;
 }
-
 /* Final Score and Time is Up span elements */
 #finalScore1,
 #finalScore2 {
